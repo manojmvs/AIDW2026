@@ -1884,13 +1884,87 @@ button {
 }
 
 @media (max-width: 600px) {
-  .hero-section { padding: 90px 20px 30px; }
-  .section-inner { width: calc(100% - 32px); }
-  .speaker-grid { grid-template-columns: 1fr; }
-  .event-grid { grid-template-columns: 1fr; }
-  .partner-grid { grid-template-columns: 1fr; }
-  .partners-heading, .collaborations-heading { grid-template-columns: 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-  .form-full { grid-column: span 1; }
-  .dialog-footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+  .hero-section {
+    padding: 90px 20px 30px;
+  }
+
+  .section-inner {
+    width: calc(100% - 32px);
+  }
+
+  /* =========================
+     SPEAKERS - 2 IN A ROW
+     ========================= */
+  .speaker-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  /* =========================
+     EVENTS - 2 IN A ROW
+     ========================= */
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  /* =========================
+     SPONSORS - 4 IN A ROW
+     ========================= */
+  .partner-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  /* =========================
+     COLLABORATIONS - 4 IN A ROW
+     ========================= */
+  .collaborations-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-heading {
+    grid-template-columns: 1fr;
+  }
+
+  /* Keep sponsor/collaboration cards compact */
+  .partner-card {
+    padding: 8px;
+    aspect-ratio: 1;
+  }
+
+  .partner-index {
+    font-size: 7px;
+  }
+
+  .partner-card p {
+    font-size: 9px;
+  }
+
+  .partner-card small {
+    font-size: 6px;
+  }
+
+  .partner-placeholder-mark {
+    width: 32px;
+    height: 28px;
+  }
+
+  /* =========================
+     REGISTRATION / FORM
+     ========================= */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-full {
+    grid-column: span 1;
+  }
+
+  .dialog-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
