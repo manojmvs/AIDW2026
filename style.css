@@ -495,19 +495,80 @@ button {
   transition: transform 1.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+/* =====================================================
+   SMOOTH TANGRAM / ORIGAMI MOTION
+   ===================================================== */
+
 .origami-primary {
-  filter: drop-shadow(0 8px 9px rgba(0, 0, 0, 0.2));
-  transition: all 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+  filter: drop-shadow(0 8px 9px rgba(0, 0, 0, 0.20));
+  transform-box: fill-box;
+  transform-origin: center center;
+
+  transition:
+    transform 1.45s cubic-bezier(.16, 1, .3, 1),
+    filter 1.45s cubic-bezier(.16, 1, .3, 1);
+  
+  will-change: transform;
 }
 
+
+/* Main Tangram pieces */
 .origami-piece-group {
-  transition: transform 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+  transform-box: fill-box;
+  transform-origin: center center;
+
+  transition:
+    transform 1.55s cubic-bezier(.16, 1, .3, 1);
+
+  will-change: transform;
 }
 
+
+/* Individual timing gives the fold a natural sequence */
+#tangram-group-yellow {
+  transition-delay: 0ms;
+}
+
+#tangram-group-blue {
+  transition-delay: 45ms;
+}
+
+#tangram-group-purple {
+  transition-delay: 80ms;
+}
+
+#tangram-group-red {
+  transition-delay: 25ms;
+}
+
+#tangram-group-pink {
+  transition-delay: 110ms;
+}
+
+#tangram-group-orange {
+  transition-delay: 65ms;
+}
+
+#tangram-group-green {
+  transition-delay: 135ms;
+}
+
+
+/* Micro facets */
 .origami-art-facet {
   mix-blend-mode: screen;
-  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.25));
-  transition: all 1.55s cubic-bezier(0.65, 0, 0.35, 1);
+
+  filter:
+    drop-shadow(0 6px 10px rgba(0,0,0,.22));
+
+  transform-box: fill-box;
+  transform-origin: center center;
+
+  transition:
+    transform 1.65s cubic-bezier(.16, 1, .3, 1),
+    opacity 1.05s cubic-bezier(.16, 1, .3, 1);
+
+  will-change: transform, opacity;
 }
 
 .origami-fold-label {

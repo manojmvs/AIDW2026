@@ -141,52 +141,149 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setFoldState(folded) {
-    isFolded = folded;
-    if (folded) {
-      tangramArt.classList.add('is-folded');
+
+  if (!tangramArt) return;
+
+  isFolded = folded;
+
+  if (folded) {
+
+    tangramArt.classList.add('is-folded');
+
+    if (foldStateText) {
       foldStateText.textContent = 'ORIGAMI FORM';
+    }
+
+    if (foldDescText) {
       foldDescText.textContent = 'CAMERA / OUT';
+    }
 
-      // Scatter 7 primary tangram pieces
-      SCATTER_TRANSFORMS.forEach(t => {
-        const el = document.getElementById(t.id);
-        if (el) {
-          el.style.transform = `translate(${150 + t.x}px, ${110 + t.y}px) rotate(${t.rotate}deg) scale(${t.scale})`;
-        }
+
+    /* -----------------------------------------
+       SCATTER PRIMARY PIECES
+       ----------------------------------------- */
+
+    SCATTER_TRANSFORMS.forEach((t, index) => {
+
+      const el = document.getElementById(t.id);
+
+      if (!el) return;
+
+      /*
+       * Small variation in timing makes the
+       * movement feel physically connected.
+       */
+      const delay = [
+        0,
+        45,
+        80,
+        25,
+        110,
+        65,
+        135
+      ][index] || 0;
+
+      el.style.transitionDelay = `${delay}ms`;
+
+      el.style.transform =
+        `translate(${150 + t.x}px, ${110 + t.y}px)
+         rotate(${t.rotate}deg)
+         scale(${t.scale})`;
+    });
+
+
+    /* -----------------------------------------
+       MICRO FACETS
+       ----------------------------------------- */
+
+    if (origamiFacetsLayer) {
+
+      const facetEls =
+        origamiFacetsLayer.querySelectorAll('.origami-art-facet');
+
+      facetEls.forEach((el, i) => {
+
+        const f = ORIGAMI_FACETS[i];
+
+        if (!f) return;
+
+        el.style.transitionDelay =
+          `${120 + i * 22}ms`;
+
+        el.style.transform =
+          `translate(${f.x}px, ${f.y}px)
+           rotate(${f.rotate}deg)
+           scale(.85)`;
+
+        el.style.opacity = String(f.opacity);
       });
+    }
 
-      // Explode micro-facets
-      if (origamiFacetsLayer) {
-        const facetEls = origamiFacetsLayer.querySelectorAll('.origami-art-facet');
-        facetEls.forEach((el, i) => {
-          const f = ORIGAMI_FACETS[i];
-          el.style.transform = `translate(${f.x}px, ${f.y}px) rotate(${f.rotate}deg) scale(0.85)`;
-          el.style.opacity = String(f.opacity);
-        });
-      }
-    } else {
-      tangramArt.classList.remove('is-folded');
+  } else {
+
+    tangramArt.classList.remove('is-folded');
+
+    if (foldStateText) {
       foldStateText.textContent = 'HOVER TO FOLD';
+    }
+
+    if (foldDescText) {
       foldDescText.textContent = '7 CONTINUOUS PIECES';
+    }
 
-      // Reassemble 7 primary pieces into neat square
-      SCATTER_TRANSFORMS.forEach(t => {
-        const el = document.getElementById(t.id);
-        if (el) {
-          el.style.transform = `translate(150px, 110px) rotate(0deg) scale(1)`;
-        }
+
+    /* -----------------------------------------
+       REASSEMBLE
+       ----------------------------------------- */
+
+    SCATTER_TRANSFORMS.forEach((t, index) => {
+
+      const el = document.getElementById(t.id);
+
+      if (!el) return;
+
+      const delay = [
+        130,
+        95,
+        70,
+        110,
+        45,
+        85,
+        0
+      ][index] || 0;
+
+      el.style.transitionDelay = `${delay}ms`;
+
+      el.style.transform =
+        `translate(150px, 110px)
+         rotate(0deg)
+         scale(1)`;
+    });
+
+
+    /* -----------------------------------------
+       RETRACT FACETS
+       ----------------------------------------- */
+
+    if (origamiFacetsLayer) {
+
+      const facetEls =
+        origamiFacetsLayer.querySelectorAll('.origami-art-facet');
+
+      facetEls.forEach((el, i) => {
+
+        el.style.transitionDelay =
+          `${i * 18}ms`;
+
+        el.style.transform =
+          `translate(350px, 310px)
+           scale(0)`;
+
+        el.style.opacity = '0';
       });
-
-      // Retract micro-facets
-      if (origamiFacetsLayer) {
-        const facetEls = origamiFacetsLayer.querySelectorAll('.origami-art-facet');
-        facetEls.forEach(el => {
-          el.style.transform = `translate(350px, 310px) scale(0)`;
-          el.style.opacity = '0';
-        });
-      }
     }
   }
+}
 
   if (tangramArt) {
     tangramArt.addEventListener('mouseenter', () => setFoldState(true));
