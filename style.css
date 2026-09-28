@@ -2064,13 +2064,12 @@ button {
 
 
     /* Override the 700px desktop SVG */
-    .origami-svg {
-        width: 100% !important;
-        max-width: 380px !important;
-        height: auto;
-
-        display: block;
-    }
+   .origami-svg {
+  width: min(400%, 700px);
+  height: auto;
+  overflow: visible;
+  display: block;
+}
 
 
     /* Keep artwork centered */

@@ -285,13 +285,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 }
 
-  if (tangramArt) {
-    tangramArt.addEventListener('mouseenter', () => setFoldState(true));
-    tangramArt.addEventListener('mouseleave', () => setFoldState(false));
-    tangramArt.addEventListener('focus', () => setFoldState(true));
-    tangramArt.addEventListener('blur', () => setFoldState(false));
-    tangramArt.addEventListener('click', () => setFoldState(!isFolded));
-  }
+if (tangramArt) {
+
+  tangramArt.addEventListener('pointerenter', () => {
+    setFoldState(true);
+  });
+
+  tangramArt.addEventListener('pointerleave', () => {
+    setFoldState(false);
+  });
+
+  tangramArt.addEventListener('focus', () => {
+    setFoldState(true);
+  });
+
+  tangramArt.addEventListener('blur', () => {
+    setFoldState(false);
+  });
+
+  tangramArt.addEventListener('click', () => {
+    setFoldState(!isFolded);
+  });
+}
 
   // 6. Interactive Timetable / Schedule Filter
   let currentDay = 'DAY 01';
