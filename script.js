@@ -141,61 +141,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setFoldState(folded) {
-
-  if (!tangramArt) return;
-
   isFolded = folded;
 
   if (folded) {
 
+    // =========================
+    // HOVER IN — FOLD / EXPLODE
+    // =========================
     tangramArt.classList.add('is-folded');
 
-    if (foldStateText) {
-      foldStateText.textContent = 'ORIGAMI FORM';
-    }
+    foldStateText.textContent = 'ORIGAMI FORM';
+    foldDescText.textContent = 'CAMERA / OUT';
 
-    if (foldDescText) {
-      foldDescText.textContent = 'CAMERA / OUT';
-    }
-
-
-    /* -----------------------------------------
-       SCATTER PRIMARY PIECES
-       ----------------------------------------- */
-
+    // Move the 7 main Tangram pieces outward
     SCATTER_TRANSFORMS.forEach((t, index) => {
-
       const el = document.getElementById(t.id);
 
-      if (!el) return;
+      if (el) {
+        // Reset transition delay
+        el.style.transitionDelay = '0ms';
 
-      /*
-       * Small variation in timing makes the
-       * movement feel physically connected.
-       */
-      const delay = [
-        0,
-        45,
-        80,
-        25,
-        110,
-        65,
-        135
-      ][index] || 0;
+        el.style.transition =
+          'transform 1.6s cubic-bezier(.16, 1, .3, 1)';
 
-      el.style.transitionDelay = `${delay}ms`;
-
-      el.style.transform =
-        `translate(${150 + t.x}px, ${110 + t.y}px)
-         rotate(${t.rotate}deg)
-         scale(${t.scale})`;
+        el.style.transform =
+          `translate(${150 + t.x}px, ${110 + t.y}px) ` +
+          `rotate(${t.rotate}deg) ` +
+          `scale(${t.scale})`;
+      }
     });
 
-
-    /* -----------------------------------------
-       MICRO FACETS
-       ----------------------------------------- */
-
+    // Slowly reveal the small origami pieces
     if (origamiFacetsLayer) {
 
       const facetEls =
@@ -203,106 +179,89 @@ document.addEventListener('DOMContentLoaded', () => {
 
       facetEls.forEach((el, i) => {
 
-  const f = ORIGAMI_FACETS[i];
+        const f = ORIGAMI_FACETS[i];
 
-  el.style.transition =
-    'transform 1.65s cubic-bezier(.16, 1, .3, 1), ' +
-    'opacity 1.65s cubic-bezier(.16, 1, .3, 1)';
+        el.style.transition =
+          'transform 1.6s cubic-bezier(.16, 1, .3, 1), ' +
+          'opacity 1.6s cubic-bezier(.16, 1, .3, 1)';
 
-  el.style.transitionDelay = `${120 + i * 22}ms`;
+        // Small stagger only when appearing
+        el.style.transitionDelay =
+          `${100 + (i * 20)}ms`;
 
-  el.style.transform =
-    `translate(${f.x}px, ${f.y}px)
-     rotate(${f.rotate}deg)
-     scale(.85)`;
+        el.style.transform =
+          `translate(${f.x}px, ${f.y}px) ` +
+          `rotate(${f.rotate}deg) ` +
+          `scale(0.85)`;
 
-  el.style.opacity = String(f.opacity);
-});
+        el.style.opacity =
+          String(f.opacity);
+      });
     }
 
-  } } else {
+  } else {
 
-  tangramArt.classList.remove('is-folded');
+    // =========================
+    // HOVER OUT — REASSEMBLE
+    // =========================
+    tangramArt.classList.remove('is-folded');
 
-  if (foldStateText) {
     foldStateText.textContent = 'HOVER TO FOLD';
-  }
-
-  if (foldDescText) {
     foldDescText.textContent = '7 CONTINUOUS PIECES';
-  }
 
+    // Main pieces return TOGETHER
+    SCATTER_TRANSFORMS.forEach((t) => {
 
-  /* =========================================
-     1. MAIN TANGRAM PIECES
-     Start returning immediately
-     ========================================= */
+      const el = document.getElementById(t.id);
 
-  SCATTER_TRANSFORMS.forEach((t, index) => {
+      if (el) {
 
-    const el = document.getElementById(t.id);
+        // IMPORTANT:
+        // No stagger here.
+        // All 7 pieces return simultaneously.
+        el.style.transitionDelay = '0ms';
 
-    if (!el) return;
+        el.style.transition =
+          'transform 1.5s cubic-bezier(.16, 1, .3, 1)';
 
-    /*
-     * Very small stagger.
-     * The pieces start returning almost together,
-     * instead of waiting for one another.
-     */
-    const delay = [0, 25, 45, 15, 60, 35, 75][index] || 0;
-
-    el.style.transition =
-      'transform 1.55s cubic-bezier(.16, 1, .3, 1)';
-
-    el.style.transitionDelay = `${delay}ms`;
-
-    el.style.transform =
-      'translate(150px, 110px) rotate(0deg) scale(1)';
-  });
-
-
-  /* =========================================
-     2. SMALL FACETS
-     Fade + shrink slowly
-     WHILE main pieces are returning
-     ========================================= */
-
-  if (origamiFacetsLayer) {
-
-    const facetEls =
-      origamiFacetsLayer.querySelectorAll('.origami-art-facet');
-
-    facetEls.forEach((el, i) => {
-
-      /*
-       * Remove the previous hover-in delay.
-       * This is important.
-       */
-      el.style.transitionDelay = '0ms';
-
-      el.style.transition =
-        'transform 1.35s cubic-bezier(.4, 0, .2, 1), ' +
-        'opacity 1.35s cubic-bezier(.4, 0, .2, 1)';
-
-      /*
-       * Start shrinking/fading immediately.
-       */
-      el.style.transform =
-        'translate(350px, 310px) scale(0)';
-
-      el.style.opacity = '0';
+        el.style.transform =
+          'translate(150px, 110px) rotate(0deg) scale(1)';
+      }
     });
+
+    // Small pieces slowly shrink + fade away
+    if (origamiFacetsLayer) {
+
+      const facetEls =
+        origamiFacetsLayer.querySelectorAll('.origami-art-facet');
+
+      facetEls.forEach((el) => {
+
+        // Remove the hover-in stagger
+        el.style.transitionDelay = '0ms';
+
+        el.style.transition =
+          'transform 1.5s cubic-bezier(.4, 0, .2, 1), ' +
+          'opacity 1.5s cubic-bezier(.4, 0, .2, 1)';
+
+        // Slowly shrink back to the center
+        el.style.transform =
+          'translate(350px, 310px) scale(0)';
+
+        // Slowly disappear
+        el.style.opacity = '0';
+      });
+    }
   }
-}
 }
 
 if (tangramArt) {
 
-  tangramArt.addEventListener('pointerenter', () => {
+  tangramArt.addEventListener('mouseenter', () => {
     setFoldState(true);
   });
 
-  tangramArt.addEventListener('pointerleave', () => {
+  tangramArt.addEventListener('mouseleave', () => {
     setFoldState(false);
   });
 
