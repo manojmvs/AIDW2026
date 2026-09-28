@@ -2037,150 +2037,164 @@ button {
 }
 
 
-@media (max-width: 600px) {
+/* =========================================================
+   MOBILE FINAL LAYOUT FIX
+   ========================================================= */
 
-  /* ==============================
-     MOBILE SECTION WIDTH
-     ============================== */
+@media screen and (max-width: 600px) {
+
+  /* -----------------------------------------
+     FULL MOBILE SECTION WIDTH
+     ----------------------------------------- */
 
   .section-inner {
-    width: calc(100% - 40px);
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+
+    box-sizing: border-box !important;
   }
 
 
-  /* ==============================
-     SPEAKERS — 2 IN A ROW
-     ============================== */
+  /* -----------------------------------------
+     SPEAKERS — 2 COLUMNS
+     ----------------------------------------- */
 
   .speaker-grid {
-    width: 100%;
-    max-width: none;
+    width: 100% !important;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 
-    margin-left: 0;
-    margin-right: 0;
+    gap: 16px !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .speaker-card {
-    width: 100%;
-    min-width: 0;
+    width: 100% !important;
+    min-width: 0 !important;
   }
 
   .speaker-image {
-    width: 100%;
+    width: 100% !important;
   }
 
 
-  /* ==============================
-     EVENTS — 2 IN A ROW
-     ============================== */
+  /* -----------------------------------------
+     EVENTS — 2 COLUMNS
+     ----------------------------------------- */
 
   .event-grid {
-    width: 100%;
-    max-width: none;
+    width: 100% !important;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 
-    margin-left: 0;
-    margin-right: 0;
+    gap: 16px !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .event-card-shell,
   .event-card {
-    width: 100%;
-    min-width: 0;
+    width: 100% !important;
+    min-width: 0 !important;
   }
 
 
-  /* ==============================
-     SPONSORS — 4 IN A ROW
-     ============================== */
+  /* -----------------------------------------
+     SPONSORS — 4 COLUMNS
+     ----------------------------------------- */
 
   .partner-grid {
-    width: 100%;
-    max-width: none;
+    width: 100% !important;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 
-    margin-left: 0;
-    margin-right: 0;
+    gap: 8px !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .partner-card {
-    width: 100%;
-    min-width: 0;
-    aspect-ratio: 1 / 1;
+    width: 100% !important;
+    min-width: 0 !important;
 
-    padding: 7px;
+    aspect-ratio: 1 / 1 !important;
+
+    padding: 6px !important;
   }
 
 
-  /* ==============================
-     COLLABORATIONS — 4 IN A ROW
-     ============================== */
+  /* -----------------------------------------
+     COLLABORATIONS — 4 COLUMNS
+     ----------------------------------------- */
 
-  .collaboration-card {
-    width: 100%;
-    min-width: 0;
-  }
-
-
-  /* Keep collaboration cards in
-     the same 4-column grid */
   .collaborations-heading + .partner-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100% !important;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 
 
-  /* ==============================
-     SMALL SPONSOR CONTENT
-     ============================== */
+  /* -----------------------------------------
+     SPONSOR / COLLABORATION CONTENT
+     ----------------------------------------- */
 
   .partner-index {
-    font-size: 7px;
+    font-size: 7px !important;
   }
 
   .partner-card p {
-    font-size: 8px;
-    line-height: 1.1;
+    font-size: 8px !important;
+    line-height: 1.1 !important;
   }
 
   .partner-card small {
-    font-size: 5px;
+    font-size: 5px !important;
   }
 
   .partner-placeholder-mark {
-    width: 30px;
-    height: 26px;
+    width: 28px !important;
+    height: 24px !important;
   }
 
 
-  /* ==============================
-     OTHER MOBILE SETTINGS
-     ============================== */
+  /* -----------------------------------------
+     MOBILE HERO
+     ----------------------------------------- */
 
   .hero-section {
-    padding: 90px 20px 30px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
+
+
+  /* -----------------------------------------
+     OTHER MOBILE SETTINGS
+     ----------------------------------------- */
 
   .partners-heading,
   .collaborations-heading {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .form-full {
-    grid-column: span 1;
+    grid-column: span 1 !important;
   }
 
   .dialog-footer {
