@@ -203,86 +203,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
       facetEls.forEach((el, i) => {
 
-        const f = ORIGAMI_FACETS[i];
+  const f = ORIGAMI_FACETS[i];
 
-        if (!f) return;
+  el.style.transition =
+    'transform 1.65s cubic-bezier(.16, 1, .3, 1), ' +
+    'opacity 1.65s cubic-bezier(.16, 1, .3, 1)';
 
-        el.style.transitionDelay =
-          `${120 + i * 22}ms`;
+  el.style.transitionDelay = `${120 + i * 22}ms`;
 
-        el.style.transform =
-          `translate(${f.x}px, ${f.y}px)
-           rotate(${f.rotate}deg)
-           scale(.85)`;
+  el.style.transform =
+    `translate(${f.x}px, ${f.y}px)
+     rotate(${f.rotate}deg)
+     scale(.85)`;
 
-        el.style.opacity = String(f.opacity);
-      });
+  el.style.opacity = String(f.opacity);
+});
     }
 
-  } else {
+  } } else {
 
-    tangramArt.classList.remove('is-folded');
+  tangramArt.classList.remove('is-folded');
 
-    if (foldStateText) {
-      foldStateText.textContent = 'HOVER TO FOLD';
-    }
-
-    if (foldDescText) {
-      foldDescText.textContent = '7 CONTINUOUS PIECES';
-    }
-
-
-    /* -----------------------------------------
-       REASSEMBLE
-       ----------------------------------------- */
-
-    SCATTER_TRANSFORMS.forEach((t, index) => {
-
-      const el = document.getElementById(t.id);
-
-      if (!el) return;
-
-      const delay = [
-        130,
-        95,
-        70,
-        110,
-        45,
-        85,
-        0
-      ][index] || 0;
-
-      el.style.transitionDelay = `${delay}ms`;
-
-      el.style.transform =
-        `translate(150px, 110px)
-         rotate(0deg)
-         scale(1)`;
-    });
-
-
-    /* -----------------------------------------
-       RETRACT FACETS
-       ----------------------------------------- */
-
-    if (origamiFacetsLayer) {
-
-      const facetEls =
-        origamiFacetsLayer.querySelectorAll('.origami-art-facet');
-
-      facetEls.forEach((el, i) => {
-
-        el.style.transitionDelay =
-          `${i * 18}ms`;
-
-        el.style.transform =
-          `translate(350px, 310px)
-           scale(0)`;
-
-        el.style.opacity = '0';
-      });
-    }
+  if (foldStateText) {
+    foldStateText.textContent = 'HOVER TO FOLD';
   }
+
+  if (foldDescText) {
+    foldDescText.textContent = '7 CONTINUOUS PIECES';
+  }
+
+
+  /* =========================================
+     1. MAIN TANGRAM PIECES
+     Start returning immediately
+     ========================================= */
+
+  SCATTER_TRANSFORMS.forEach((t, index) => {
+
+    const el = document.getElementById(t.id);
+
+    if (!el) return;
+
+    /*
+     * Very small stagger.
+     * The pieces start returning almost together,
+     * instead of waiting for one another.
+     */
+    const delay = [0, 25, 45, 15, 60, 35, 75][index] || 0;
+
+    el.style.transition =
+      'transform 1.55s cubic-bezier(.16, 1, .3, 1)';
+
+    el.style.transitionDelay = `${delay}ms`;
+
+    el.style.transform =
+      'translate(150px, 110px) rotate(0deg) scale(1)';
+  });
+
+
+  /* =========================================
+     2. SMALL FACETS
+     Fade + shrink slowly
+     WHILE main pieces are returning
+     ========================================= */
+
+  if (origamiFacetsLayer) {
+
+    const facetEls =
+      origamiFacetsLayer.querySelectorAll('.origami-art-facet');
+
+    facetEls.forEach((el, i) => {
+
+      /*
+       * Remove the previous hover-in delay.
+       * This is important.
+       */
+      el.style.transitionDelay = '0ms';
+
+      el.style.transition =
+        'transform 1.35s cubic-bezier(.4, 0, .2, 1), ' +
+        'opacity 1.35s cubic-bezier(.4, 0, .2, 1)';
+
+      /*
+       * Start shrinking/fading immediately.
+       */
+      el.style.transform =
+        'translate(350px, 310px) scale(0)';
+
+      el.style.opacity = '0';
+    });
+  }
+}
 }
 
 if (tangramArt) {
