@@ -140,115 +140,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function setFoldState(folded) {
+ function setFoldState(folded) {
   isFolded = folded;
 
   if (folded) {
-
-    // =========================
-    // HOVER IN — FOLD / EXPLODE
-    // =========================
     tangramArt.classList.add('is-folded');
-
     foldStateText.textContent = 'ORIGAMI FORM';
     foldDescText.textContent = 'CAMERA / OUT';
 
-    // Move the 7 main Tangram pieces outward
-    SCATTER_TRANSFORMS.forEach((t, index) => {
+    // Scatter 7 primary tangram pieces
+    SCATTER_TRANSFORMS.forEach(t => {
       const el = document.getElementById(t.id);
 
       if (el) {
-        // Reset transition delay
-        el.style.transitionDelay = '0ms';
-
-        el.style.transition =
-          'transform 1.6s cubic-bezier(.16, 1, .3, 1)';
-
         el.style.transform =
-          `translate(${150 + t.x}px, ${110 + t.y}px) ` +
-          `rotate(${t.rotate}deg) ` +
-          `scale(${t.scale})`;
+          `translate(${150 + t.x}px, ${110 + t.y}px) rotate(${t.rotate}deg) scale(${t.scale})`;
       }
     });
 
-    // Slowly reveal the small origami pieces
+    // Explode micro-facets
     if (origamiFacetsLayer) {
-
       const facetEls =
         origamiFacetsLayer.querySelectorAll('.origami-art-facet');
 
       facetEls.forEach((el, i) => {
-
         const f = ORIGAMI_FACETS[i];
 
-        el.style.transition =
-          'transform 1.6s cubic-bezier(.16, 1, .3, 1), ' +
-          'opacity 1.6s cubic-bezier(.16, 1, .3, 1)';
-
-        // Small stagger only when appearing
-        el.style.transitionDelay =
-          `${100 + (i * 20)}ms`;
-
         el.style.transform =
-          `translate(${f.x}px, ${f.y}px) ` +
-          `rotate(${f.rotate}deg) ` +
-          `scale(0.85)`;
+          `translate(${f.x}px, ${f.y}px) rotate(${f.rotate}deg) scale(0.85)`;
 
-        el.style.opacity =
-          String(f.opacity);
+        el.style.opacity = String(f.opacity);
       });
     }
 
   } else {
-
-    // =========================
-    // HOVER OUT — REASSEMBLE
-    // =========================
     tangramArt.classList.remove('is-folded');
-
     foldStateText.textContent = 'HOVER TO FOLD';
     foldDescText.textContent = '7 CONTINUOUS PIECES';
 
-    // Main pieces return TOGETHER
-    SCATTER_TRANSFORMS.forEach((t) => {
-
+    // Reassemble 7 primary pieces into neat square
+    SCATTER_TRANSFORMS.forEach(t => {
       const el = document.getElementById(t.id);
 
       if (el) {
-
-        // IMPORTANT:
-        // No stagger here.
-        // All 7 pieces return simultaneously.
-        el.style.transitionDelay = '0ms';
-
-        el.style.transition =
-          'transform 1.5s cubic-bezier(.16, 1, .3, 1)';
-
         el.style.transform =
-          'translate(150px, 110px) rotate(0deg) scale(1)';
+          `translate(150px, 110px) rotate(0deg) scale(1)`;
       }
     });
 
-    // Small pieces slowly shrink + fade away
+    // Retract micro-facets
     if (origamiFacetsLayer) {
-
       const facetEls =
         origamiFacetsLayer.querySelectorAll('.origami-art-facet');
 
-      facetEls.forEach((el) => {
-
-        // Remove the hover-in stagger
-        el.style.transitionDelay = '0ms';
-
-        el.style.transition =
-          'transform 1.5s cubic-bezier(.4, 0, .2, 1), ' +
-          'opacity 1.5s cubic-bezier(.4, 0, .2, 1)';
-
-        // Slowly shrink back to the center
+      facetEls.forEach(el => {
         el.style.transform =
-          'translate(350px, 310px) scale(0)';
+          `translate(350px, 310px) scale(0)`;
 
-        // Slowly disappear
         el.style.opacity = '0';
       });
     }
@@ -256,26 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 if (tangramArt) {
-
-  tangramArt.addEventListener('mouseenter', () => {
-    setFoldState(true);
-  });
-
-  tangramArt.addEventListener('mouseleave', () => {
-    setFoldState(false);
-  });
-
-  tangramArt.addEventListener('focus', () => {
-    setFoldState(true);
-  });
-
-  tangramArt.addEventListener('blur', () => {
-    setFoldState(false);
-  });
-
-  tangramArt.addEventListener('click', () => {
-    setFoldState(!isFolded);
-  });
+  tangramArt.addEventListener('mouseenter', () => setFoldState(true));
+  tangramArt.addEventListener('mouseleave', () => setFoldState(false));
+  tangramArt.addEventListener('focus', () => setFoldState(true));
+  tangramArt.addEventListener('blur', () => setFoldState(false));
+  tangramArt.addEventListener('click', () => setFoldState(!isFolded));
 }
 
   // 6. Interactive Timetable / Schedule Filter
