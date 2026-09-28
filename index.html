@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIDW 2026 — Tangram | Geometric Ideas</title>
+  <meta name="description" content="Acharya International Design Week 2026 — Bengaluru's largest design festival, 2–6 November 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom Difference Cursor -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" aria-live="polite">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toast-message">You're on the list! Interest received.</span>
+  </div>
+
+  <!-- Site Navigation -->
+  <header id="site-nav" class="site-nav">
+    
+    <!-- LOGOS -->
+    <div class="nav-brand-cluster">
+        <!-- Acharya Logo -->
+      <a href="https://www.acharya.ac.in/" class="nav-logo-link" aria-label="Acharya Home">
+        <img src="assests/Acharya.webp" alt="Acharya" />
+      </a>
+      <!-- Line partion -->
+        <span class="nav-logo-divider" aria-hidden="true"></span>
+            <!-- ASD Logo -->
+      <span class="nav-companion-logo nav-asd-logo">
+        <a href="https://asd.ac.in/">
+         <img src="assests/ASD.webp" alt="Acharya School of Design" />
+        </a>
+      </span>
+        <!-- Line Partion -->
+      <span class="nav-logo-divider" aria-hidden="true"></span>
+      <!-- AIDW Logo -->
+      <span class="nav-companion-logo nav-aidw-logo">
+        <a href="index.html">
+        <img src="assests/AIDW.png" alt="AIDW Tangram" />
+        </a>
+      </span>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="#about">ABOUT</a>
+      <a href="#events">EVENTS</a>
+      <a href="#speakers">SPEAKERS</a>
+      <a href="#schedule">SCHEDULE</a>
+      <a href="#sponsors">SPONSORS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <button id="open-register-nav-btn" class="nav-register" data-cursor-label="ENTER →">
+      <span>REGISTER NOW</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+    </button>
+
+    <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Toggle navigation">
+      <svg id="menu-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      <svg id="close-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="#about">ABOUT</a>
+      <a href="#events">EVENTS</a>
+      <a href="#speakers">SPEAKERS</a>
+      <a href="#schedule">SCHEDULE</a>
+      <a href="#sponsors">SPONSORS</a>
+      <a href="#contact">CONTACT</a>
+      <button id="mobile-register-btn">REGISTER NOW ↗</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 01: Hero -->
+    <section id="top" class="hero-section">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span> ACHARYA SCHOOL OF DESIGN
+        </div>
+
+        <h1>
+          ACHARYA <span>INTERNATIONAL</span>
+          <span>DESIGN WEEK</span>
+          <em>2026</em>
+        </h1>
+
+        <div class="hero-edition-label">3RD EDITION</div>
+        <div class="hero-festival-label">BENGALURU'S LARGEST DESIGN FESTIVAL</div>
+
+        <div class="hero-tangram-word hero-reform-word">
+          <span data-cursor-label="MOVE" class="letter-1">R<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-2">E<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-3">A<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-4">R<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-5">R<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-6">A<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-7">N<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-1">G<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-2">E<i></i></span>
+          <span class="word-space">&nbsp;</span>
+          <span data-cursor-label="MOVE" class="letter-3">|<i></i></span>
+          <span class="word-space">&nbsp;</span>
+          <span data-cursor-label="MOVE" class="letter-4">R<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-5">E<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-6">F<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-7">O<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-1">R<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-2">M<i></i></span>
+          <span class="word-space">&nbsp;</span>
+          <span data-cursor-label="MOVE" class="letter-3">|<i></i></span>
+          <span class="word-space">&nbsp;</span>
+          <span data-cursor-label="MOVE" class="letter-4">R<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-5">E<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-6">I<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-7">M<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-1">A<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-2">G<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-3">I<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-4">N<i></i></span>
+          <span data-cursor-label="MOVE" class="letter-5">E<i></i></span>
+        </div>
+
+        <div class="hero-date">
+          02 <i></i> 06 NOV 2026
+        </div>
+
+        <div class="hero-actions">
+          <button id="hero-register-btn" data-cursor-label="ENTER →">
+            REGISTER NOW
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </button>
+          <a class="arrow-link arrow-link-light" href="#events">
+            EXPLORE THE WEEK
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art-wrap">
+        <div id="tangram-art" class="tangram-artwork origami-hero-art" tabindex="0" role="button" aria-label="Hover or click to fold Tangram square">
+          <svg class="origami-svg" viewBox="0 0 700 620" role="img">
+            <rect class="origami-frame" x="150" y="110" width="400" height="400" fill="none" stroke="#F7F5EF" stroke-width="2"></rect>
+            
+            <!-- 7 Primary Continuous Tangram Pieces -->
+            <g id="tangram-group-yellow" class="origami-piece-group" transform="translate(150, 110)">
+              <polygon class="origami-primary" points="0,0 400,0 200,200" fill="#FFE500" stroke="#F7F5EF" stroke-width="7"></polygon>
+            </g>
+            <g id="tangram-group-blue" class="origami-piece-group" transform="translate(150, 110)">
+              <polygon class="origami-primary" points="0,0 100,100 100,300 0,200" fill="#10B1E2" stroke="#F7F5EF" stroke-width="7"></polygon>
+            </g>
+            <g id="tangram-group-purple" class="origami-piece-group" transform="translate(150, 110)">
+              <polygon class="origami-primary" points="100,100 200,200 100,300" fill="#51247A" stroke="#F7F5EF" stroke-width="7"></polygon>
+            </g>
+            <g id="tangram-group-red" class="origami-piece-group" transform="translate(150, 110)">
+              <polygon class="origami-primary" points="400,0 400,400 200,200" fill="#F20B1D" stroke="#F7F5EF" stroke-width="7"></polygon>
+            </g>
+            <g id="tangram-group-pink" class="origami-piece-group" transform="translate(150, 110)">
+              <polygon class="origami-primary" points="0,200 200,400 0,400" fill="#E90083" stroke="#F7F5EF" stroke-width="7"></polygon>
+            </g>
+            <g id="tangram-group-orange" class="origami-piece-group" transform="translate(150, 110)">
+              <polygon class="origami-primary" points="100,300 200,200 300,300 200,400" fill="#F47B00" stroke="#F7F5EF" stroke-width="7"></polygon>
+            </g>
+            <g id="tangram-group-green" class="origami-piece-group" transform="translate(150, 110)">
+              <polygon class="origami-primary" points="300,300 400,400 200,400" fill="#94C11F" stroke="#F7F5EF" stroke-width="7"></polygon>
+            </g>
+
+            <!-- Origami Exploded Micro-Facets -->
+            <g id="origami-facets-layer"></g>
+          </svg>
+
+          <div class="origami-fold-label">
+            <span id="fold-state-text">HOVER TO FOLD</span>
+            <b id="fold-desc-text">7 CONTINUOUS PIECES</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- <button id="scroll-cue-btn" class="scroll-cue" aria-label="Scroll down">
+        <span>SCROLL</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 7 17 17"/><polyline points="17 7 17 17 7 17"/></svg>
+      </button> -->
+    </section>
+
+    <!-- Section 02: Speakers -->
+    <section id="speakers" class="speakers-section dark-section">
+      <div class="section-inner">
+        <div class="section-heading-row speakers-heading">
+          <div>
+            <div class="section-marker"><span>02</span><i></i><b>PEOPLE TO WATCH</b></div>
+            <h2>VISIONARIES.<br /><em>CREATORS.</em><br />CHANGE MAKERS.</h2>
+          </div>
+          <a class="arrow-link arrow-link-light" href="#contact">
+            VIEW ALL SPEAKERS
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+
+        <div class="speaker-grid">
+          <article class="speaker-card">
+            <div class="speaker-image" style="background-image: url('assests/s1.jpg');">
+              <i style="background-color: #00A8E8;"></i>
+              <b style="border-color: #00A8E8;"></b>
+            </div>
+            <div class="speaker-meta">
+              <h3>Prof. Marcus Vance</h3>
+              <p>Keynote Speaker</p>
+              <small>Computational Architecture & AI</small>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-image" style="background-image: url('assests/s2.jpg');">
+              <i style="background-color: #FFD100;"></i>
+              <b style="border-color: #FFD100;"></b>
+            </div>
+            <div class="speaker-meta">
+              <h3>Dr. Elena Rostova</h3>
+              <p>Design Theorist</p>
+              <small>Biodesign & Sustainable Futures</small>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-image" style="background-image: url('assests/s3.jpg');">
+              <i style="background-color: #00C853;"></i>
+              <b style="border-color: #00C853;"></b>
+            </div>
+            <div class="speaker-meta">
+              <h3>Aarav Kulkarni</h3>
+              <p>Creative Director</p>
+              <small>Tangram Spatial Interfaces</small>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-image" style="background-image: url('assests/s4.jpg');">
+              <i style="background-color: #E01A4F;"></i>
+              <b style="border-color: #E01A4F;"></b>
+            </div>
+            <div class="speaker-meta">
+              <h3>Sophie Zhang</h3>
+              <p>Lead Researcher</p>
+              <small>Autonomous Creative Agents</small>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-image" style="background-image: url('assests/s5.jpg');">
+              <i style="background-color: #FF6B00;"></i>
+              <b style="border-color: #FF6B00;"></b>
+               </div>
+            <div class="speaker-meta">
+              <h3>David O'Connor</h3>
+              <p>Principal Partner</p>
+              <small>Global Design Pedagogy</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 03: The Design Week -->
+    <section id="about" class="week-section light-section">
+      <div class="week-image week-image-official" style="background-image: url('https://asd.ac.in/design/cta/gallery/asd_gallery_3.jpg');" role="img" aria-label="Acharya School of Design student work">
+        <div class="week-overlay-shape shape-one"></div>
+        <div class="week-overlay-shape shape-two"></div>
+        <span>LEARN<br />CONNECT<br />CREATE</span>
+      </div>
+
+      <div class="week-copy">
+        <div class="section-marker section-marker-light"><span>03</span><i></i><b>THE DESIGN WEEK</b></div>
+        <h2><em>5 DAYS.</em><br />ONE DESIGN<br />WEEK.</h2>
+        <p>Talks, panels, workshops, exhibitions, competitions and more — a full campus becomes a living laboratory for possibility.</p>
+        <a class="arrow-link" href="#schedule">
+          VIEW FULL SCHEDULE
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 04: Events -->
+    <section id="events" class="events-section dark-section">
+      <div class="section-inner">
+        <div class="events-intro">
+          <div class="section-marker"><span>04</span><i></i><b>EVERYTHING IS AN INVITATION</b></div>
+          <h2>EXPLORE<br /><em>THE WEEK.</em></h2>
+          <p>Four visual fragments. Four ways to enter the week.</p>
+        </div>
+
+        <div class="event-grid event-portrait-grid">
+          <div class="event-card-shell">
+            <article class="event-card event-card-1" aria-label="TALKS & PANELS">
+              <div class="event-card-photo" style="background-image: url('https://customer-assets-4nw71qhi.emergentagent.net/job_geometric-ideas/artifacts/3txm4jas_stage.jpg');"></div>
+              <div class="event-tangram-layer">
+                <span class="event-tan-major" style="background-color: #00A8E8;"></span>
+                <span class="event-tan-secondary"></span>
+                <span class="event-tan-minor event-tan-minor-a"></span>
+                <span class="event-tan-minor event-tan-minor-b"></span>
+              </div>
+            </article>
+            <h3 class="event-card-caption">TALKS & PANELS</h3>
+          </div>
+
+          <div class="event-card-shell">
+            <article class="event-card event-card-2" aria-label="WORKSHOPS">
+              <div class="event-card-photo" style="background-image: url('https://customer-assets-4nw71qhi.emergentagent.net/job_geometric-ideas/artifacts/51xzdt6x_90853d751479eb068e394efc2d7b03ba.jpg');"></div>
+              <div class="event-tangram-layer">
+                <span class="event-tan-major" style="background-color: #FFD100;"></span>
+                <!-- <span class="event-tan-secondary"></span>
+                <span class="event-tan-minor event-tan-minor-a"></span>
+                <span class="event-tan-minor event-tan-minor-b"></span> -->
+              </div>
+            </article>
+            <h3 class="event-card-caption">WORKSHOPS</h3>
+          </div>
+
+          <div class="event-card-shell">
+            <article class="event-card event-card-3" aria-label="COMPETITIONS">
+              <div class="event-card-photo" style="background-image: url('https://customer-assets-4nw71qhi.emergentagent.net/job_geometric-ideas/artifacts/9p2ykkfn_b2832bddafce0c04d3cb016e982bf74e.jpg');"></div>
+              <div class="event-tangram-layer">
+                <span class="event-tan-major" style="background-color: #E01A4F;"></span>
+                <span class="event-tan-secondary"></span>
+                <span class="event-tan-minor event-tan-minor-a"></span>
+                <span class="event-tan-minor event-tan-minor-b"></span>
+              </div>
+            </article>
+            <h3 class="event-card-caption">COMPETITIONS</h3>
+          </div>
+
+          <div class="event-card-shell">
+            <article class="event-card event-card-4" aria-label="FASHION SHOW">
+              <div class="event-card-photo" style="background-image: url('https://customer-assets-4nw71qhi.emergentagent.net/job_geometric-ideas/artifacts/me4m95ck_download%20%2818%29.jpg');"></div>
+              <div class="event-tangram-layer">
+                <span class="event-tan-major" style="background-color: #FF6B00;"></span>
+                <span class="event-tan-secondary"></span>
+                <span class="event-tan-minor event-tan-minor-a"></span>
+                <span class="event-tan-minor event-tan-minor-b"></span>
+              </div>
+            </article>
+            <h3 class="event-card-caption">FASHION SHOW</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05: Timetable / Schedule -->
+    <section id="schedule" class="schedule-section light-section">
+      <div class="section-inner">
+        <div class="schedule-top">
+          <div>
+            <div class="section-marker section-marker-light"><span>05</span><i></i><b>WHEN TO JOIN</b></div>
+            <h2>THE<br /><em>TIMETABLE.</em></h2>
+          </div>
+          <p>Five days of signals, exchange and action.<br />Choose a day. Follow a thread.</p>
+        </div>
+
+        <div class="schedule-controls">
+          <div id="day-tabs" class="day-tabs">
+            <button class="is-active" data-day="DAY 01">DAY 01 <span>02 NOV</span></button>
+            <button data-day="DAY 02">DAY 02 <span>03 NOV</span></button>
+            <button data-day="DAY 03">DAY 03 <span>04 NOV</span></button>
+            <button data-day="DAY 04">DAY 04 <span>05 NOV</span></button>
+            <button data-day="DAY 05">DAY 05 <span>06 NOV</span></button>
+          </div>
+
+          <div id="filter-tabs" class="filter-tabs">
+            <button class="is-active" data-filter="ALL">ALL</button>
+            <button data-filter="TALKS">TALKS</button>
+            <button data-filter="WORKSHOPS">WORKSHOPS</button>
+            <button data-filter="COMPETITIONS">COMPETITIONS</button>
+            <button data-filter="FASHION">FASHION</button>
+            <button data-filter="EXHIBITIONS">EXHIBITIONS</button>
+          </div>
+        </div>
+
+        <div id="schedule-list" class="schedule-list">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 06: Sponsors & Collaborations -->
+    <section id="sponsors" class="partners-section dark-section">
+      <div class="section-inner">
+        <div class="partners-heading">
+          <div class="section-marker"><span>06</span><i></i><b>PARTNERS IN POSSIBILITY</b></div>
+          <h2>OUR <em>SPONSORS.</em></h2>
+          <p>Organizations helping the third edition create more room for ideas, access and exchange.</p>
+        </div>
+
+        <div class="partner-grid">
+          <article class="partner-card">
+            <span class="partner-index">01</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>SPONSOR 01</small>
+          </article>
+          <article class="partner-card">
+            <span class="partner-index">02</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>SPONSOR 02</small>
+          </article>
+          <article class="partner-card">
+            <span class="partner-index">03</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>SPONSOR 03</small>
+          </article>
+          <article class="partner-card">
+            <span class="partner-index">04</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>SPONSOR 04</small>
+          </article>
+        </div>
+
+        <div class="collaborations-heading">
+          <span>02 / 02</span>
+          <h3>OUR COLLABORATIONS.</h3>
+          <p>Creative and institutional relationships forming the wider design-week network.</p>
+        </div>
+
+        <div class="partner-grid partner-grid-collaborations">
+          <article class="partner-card collaboration-card">
+            <span class="partner-index">01</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>COLLABORATION 01</small>
+          </article>
+          <article class="partner-card collaboration-card">
+            <span class="partner-index">02</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>COLLABORATION 02</small>
+          </article>
+          <article class="partner-card collaboration-card">
+            <span class="partner-index">03</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>COLLABORATION 03</small>
+          </article>
+          <article class="partner-card collaboration-card">
+            <span class="partner-index">04</span>
+            <div class="partner-placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>TO BE ANNOUNCED</p>
+            <small>COLLABORATION 04</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 07: Gallery -->
+    <section id="gallery" class="gallery-section light-section">
+      <div class="section-inner">
+        <div class="gallery-heading">
+          <div class="section-marker section-marker-light"><span>07</span><i></i><b>IN THE WILD</b></div>
+          <h2>EXPERIENCES<br /><em>IN FORM.</em></h2>
+          <p>A glimpse into the fragments, people and places that make a week like this feel alive.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-tall" style="background-image: url('https://images.unsplash.com/photo-1569525987258-6aa03a5e4926?crop=entropy&cs=srgb&fm=jpg&q=85');">
+            <i style="background-color: #FFD100;"></i>
+            <figcaption>
+              <small>STUDENT WORK</small>
+              <strong>Spatial Futures</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-wide" style="background-image: url('https://images.unsplash.com/photo-1527576539890-dfa815648363?crop=entropy&cs=srgb&fm=jpg&q=85');">
+            <i style="background-color: #00A8E8;"></i>
+            <figcaption>
+              <small>WORKSHOPS</small>
+              <strong>The Making Of</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-square" style="background-image: url('https://images.unsplash.com/photo-1551161440-88a5c5b09ba0?crop=entropy&cs=srgb&fm=jpg&q=85');">
+            <i style="background-color: #E01A4F;"></i>
+            <figcaption>
+              <small>EXHIBITION</small>
+              <strong>Soft Systems</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-medium" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?crop=entropy&cs=srgb&fm=jpg&q=85');">
+            <i style="background-color: #FF6B00;"></i>
+            <figcaption>
+              <small>FASHION</small>
+              <strong>Night Studies</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-wide" style="background-image: url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?crop=entropy&cs=srgb&fm=jpg&q=85');">
+            <i style="background-color: #00C853;"></i>
+            <figcaption>
+              <small>DESIGN EXPERIMENT</small>
+              <strong>Campus As Canvas</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 08: Registration & Contact -->
+    <section id="contact" class="registration-section dark-section">
+      <div class="registration-fragment fragment-one"></div>
+      <div class="registration-fragment fragment-two"></div>
+      <div class="section-inner registration-inner">
+        <div class="section-marker"><span>08</span><i></i><b>YOUR NEXT POSSIBILITY</b></div>
+        <h2>BE PART OF<br /><em>THE POSSIBILITY.</em></h2>
+
+        <div class="registration-bottom">
+          <div class="registration-details">
+            <span>02 — 06 NOV 2026</span>
+            <strong>ACHARYA INTERNATIONAL DESIGN WEEK</strong>
+
+            <address class="registration-contact">
+              <div class="contact-people">
+                <p>
+                  <b>Manoj M</b>
+                  <a href="tel:+919618462229">+91 9618462229</a>
+                </p>
+                <p>
+                  <b>Shalaka Patil</b>
+                  <a href="tel:+919284231886">+91 9284231886</a>
+                </p>
+              </div>
+
+              <div class="contact-email">
+                <small>EMAIL</small>
+                <a href="mailto:adw@acharya.ac.in">adw@acharya.ac.in</a>
+              </div>
+
+              <div class="contact-address">
+                <small>ADDRESS</small>
+                <span>Acharya School of Design,<br />Acharya Dr. Sarvepalli Radhakrishnan Road,<br />Bengaluru, 560107</span>
+              </div>
+            </address>
+          </div>
+
+          <button id="cta-register-btn" data-cursor-label="ENTER →">
+            REGISTER NOW
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div>
+          <strong>AIDW <em>2026</em></strong>
+          <small>ACHARYA INTERNATIONAL DESIGN WEEK</small>
+        </div>
+      </div>
+      <p>Designing possibilities<br />through connection.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <span>ACHARYA SCHOOL OF DESIGN <b></b> BENGALURU, INDIA</span>
+      <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#events">EVENTS</a>
+        <a href="#speakers">SPEAKERS</a>
+        <a href="#schedule">SCHEDULE</a>
+        <a href="#sponsors">SPONSORS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog -->
+  <div id="modal-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div id="registration-dialog" class="registration-dialog" role="dialog" aria-modal="true">
+      <button id="close-modal-btn" class="close-modal-btn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="section-marker section-marker-light"><span>R</span><i></i><b>AIDW 2026 REGISTRATION</b></div>
+      <h2>MAKE YOUR<br /><em>CONNECTION.</em></h2>
+      <p style="color: #10131594; font-size: 13px; margin-top: 4px;">Leave a note for the team and we’ll keep you close to the week.</p>
+
+      <form id="registration-form">
+        <div class="form-grid">
+          <label>
+            NAME
+            <input id="reg-name" required minlength="2" placeholder="Your name" />
+          </label>
+          <label>
+            EMAIL
+            <input id="reg-email" required type="email" placeholder="you@example.com" />
+          </label>
+          <label>
+            DISCIPLINE
+            <input id="reg-discipline" required placeholder="Design, architecture, tech..." />
+          </label>
+          <label class="form-full">
+            MESSAGE
+            <textarea id="reg-message" rows="3" placeholder="What are you curious about?"></textarea>
+          </label>
+        </div>
+
+        <div class="dialog-footer">
+          <a class="external-registration-link" href="https://example.com/aidw-registration" target="_blank" rel="noreferrer">
+            EXTERNAL REGISTRATION
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <button type="submit" id="submit-btn">
+            SEND INTEREST
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
