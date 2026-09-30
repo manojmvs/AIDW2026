@@ -3616,3 +3616,102 @@ body.lightbox-open { overflow: hidden; }
     height: auto !important;
   }
 }
+
+/* =========================================================
+   FINAL FIX — SHOW COMPLETE SPONSOR & COLLABORATION IMAGES
+   IMPORTANT: keep this block at the VERY END of the CSS.
+   ========================================================= */
+
+#sponsors .partner-grid.partner-grid-collaborations {
+    width: 100% !important;
+    max-width: 1200px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    display: block !important;
+    margin: 40px auto 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+#sponsors .partner-grid.partner-grid-collaborations .collaboration-card,
+#sponsors .partner-grid.partner-grid-collaborations .partner-card {
+    width: 100% !important;
+    max-width: 1200px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+#sponsors .partner-grid.partner-grid-collaborations .collaboration-image,
+#sponsors .partner-grid.partner-grid-collaborations img.partner-feature-image {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    transform: none !important;
+}
+
+#sponsors .partner-grid.partner-grid-collaborations .collaboration-card:hover .collaboration-image {
+    transform: none !important;
+}
+
+/* Never let old partner-card pseudo elements cover the image */
+#sponsors .partner-grid.partner-grid-collaborations .collaboration-card::before,
+#sponsors .partner-grid.partner-grid-collaborations .collaboration-card::after,
+#sponsors .partner-grid.partner-grid-collaborations .partner-card::before,
+#sponsors .partner-grid.partner-grid-collaborations .partner-card::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Mobile: full image, natural height — NO 1.4:1 crop */
+@media screen and (max-width: 800px) {
+    #sponsors .partner-grid.partner-grid-collaborations {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        display: block !important;
+        margin: 30px 0 0 !important;
+        overflow: visible !important;
+    }
+
+    #sponsors .partner-grid.partner-grid-collaborations .collaboration-card,
+    #sponsors .partner-grid.partner-grid-collaborations .partner-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        overflow: visible !important;
+    }
+
+    #sponsors .partner-grid.partner-grid-collaborations .collaboration-image,
+    #sponsors .partner-grid.partner-grid-collaborations img.partner-feature-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #sponsors .partner-grid.partner-grid-collaborations {
+        margin-top: 24px !important;
+    }
+}
