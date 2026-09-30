@@ -3566,3 +3566,53 @@ body.lightbox-open { overflow: hidden; }
     width: min(84vw, 270px) !important;
   }
 }
+
+/* =========================================================
+   FINAL FIX — SHOW SPONSOR / COLLABORATION IMAGES COMPLETELY
+   Do NOT crop the supplied artwork.
+   ========================================================= */
+
+.partner-grid.partner-grid-collaborations .collaboration-card {
+  height: auto !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+}
+
+.partner-grid.partner-grid-collaborations .collaboration-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  margin: 0 auto !important;
+}
+
+@media screen and (max-width: 800px) {
+  .partner-grid.partner-grid-collaborations .collaboration-card {
+    height: auto !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+  }
+
+  .partner-grid.partner-grid-collaborations .collaboration-image {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .partner-grid.partner-grid-collaborations .collaboration-card {
+    aspect-ratio: auto !important;
+  }
+
+  .partner-grid.partner-grid-collaborations .collaboration-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
