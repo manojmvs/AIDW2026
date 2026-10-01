@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIDW 2026 — Registration</title>
+  <meta name="description" content="AIDW 2026 registration opens soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .registration-page{min-height:100vh;background:var(--charcoal,#111516);color:var(--ivory,#f7f5ef);overflow:hidden;position:relative;}
+    .registration-page::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(247,245,239,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(247,245,239,.035) 1px,transparent 1px);background-size:100px 100px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 90%);}
+    .registration-main{min-height:100vh;display:grid;place-items:center;padding:140px 30px 70px;position:relative;}
+    .registration-content{width:min(1200px,100%);text-align:center;position:relative;z-index:1;}
+    .registration-marker{display:flex;justify-content:center;align-items:center;gap:14px;color:rgba(247,245,239,.55);font:10px 'JetBrains Mono',monospace;letter-spacing:.18em;margin-bottom:28px;}
+    .registration-marker i{display:block;width:46px;height:1px;background:var(--yellow,#ffd100);}
+    .registration-content h1{margin:0;text-transform:uppercase;font:800 clamp(54px,10vw,150px)/.82 'Outfit',sans-serif;letter-spacing:-.07em;}
+    .registration-content h1 span{display:block;color:var(--yellow,#ffd100);font-weight:300;}
+    .registration-sub{margin:38px auto 0;max-width:620px;color:rgba(247,245,239,.6);font:13px/1.8 'Plus Jakarta Sans',sans-serif;}
+    .registration-date{margin-top:34px;color:var(--ivory,#f7f5ef);font:600 11px 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+    .registration-back{display:inline-flex;align-items:center;gap:12px;margin-top:42px;padding:13px 18px;border:1px solid rgba(247,245,239,.24);color:var(--ivory,#f7f5ef);font:10px 'JetBrains Mono',monospace;letter-spacing:.12em;transition:.3s;}
+    .registration-back:hover{color:var(--yellow,#ffd100);border-color:var(--yellow,#ffd100);gap:18px;}
+    .registration-shape{position:absolute;left:50%;top:50%;width:min(42vw,520px);aspect-ratio:1;transform:translate(-50%,-50%) rotate(45deg);border:1px solid rgba(255,209,0,.13);pointer-events:none;}
+    .registration-shape::before,.registration-shape::after{content:"";position:absolute;inset:15%;border:1px solid rgba(0,168,232,.1);}
+    .registration-shape::after{inset:30%;border-color:rgba(224,26,79,.1);}
+    @media(max-width:600px){.registration-main{padding:120px 20px 50px}.registration-content h1{font-size:clamp(50px,15vw,88px)}.registration-sub{font-size:12px;margin-top:28px}.registration-shape{width:85vw}.registration-marker{font-size:8px}}
+  </style>
+</head>
+<body class="registration-page">
+  <header id="site-nav" class="site-nav">
+    
+    <!-- LOGOS -->
+    <div class="nav-brand-cluster">
+        <!-- Acharya Logo -->
+      <a href="https://www.acharya.ac.in/" class="nav-logo-link" aria-label="Acharya Home">
+        <img src="assests/Acharya.webp" alt="Acharya" />
+      </a>
+      <!-- Line partion -->
+        <span class="nav-logo-divider" aria-hidden="true"></span>
+            <!-- ASD Logo -->
+      <span class="nav-companion-logo nav-asd-logo">
+        <a href="https://asd.ac.in/">
+         <img src="assests/ASD.webp" alt="Acharya School of Design" />
+        </a>
+      </span>
+        <!-- Line Partion -->
+      <span class="nav-logo-divider" aria-hidden="true"></span>
+      <!-- AIDW Logo -->
+      <span class="nav-companion-logo nav-aidw-logo">
+        <a href="index.html">
+        <img src="assests/AIDW.png" alt="AIDW Tangram" />
+        </a>
+      </span>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#events">EVENTS</a>
+      <!-- <a href="#speakers">SPEAKERS</a> -->
+      <!-- <a href="#schedule">SCHEDULE</a> -->
+      <a href="index.html#sponsors">SPONSORS</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+
+    <button id="open-register-nav-btn" class="nav-register" data-cursor-label="ENTER →">
+      <a href="registration.html">
+      <span>REGISTER NOW</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+      </a>
+    </button>
+
+    <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Toggle navigation">
+      <svg id="menu-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      <svg id="close-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html">EVENTS</a>
+      <!-- <a href="#speakers">SPEAKERS</a> -->
+      <!-- <a href="#schedule">SCHEDULE</a> -->
+      <a href="index.html#sponsors">SPONSORS</a>
+      <a href="index.html#contact">CONTACT</a>
+      <button id="mobile-register-btn">REGISTER NOW ↗</button>
+    </div>
+  </header>
+  <main class="registration-main">
+    <div class="registration-shape" aria-hidden="true"></div>
+    <section class="registration-content" aria-labelledby="registration-title">
+      <div class="registration-marker"><i></i><span>AIDW 2026 · 3RD EDITION</span><i></i></div>
+      <h1 id="registration-title">REGISTRATION <span>OPENS SOON.</span></h1>
+      <p class="registration-sub">We are getting everything ready. Registration for Acharya International Design Week 2026 will open soon.</p>
+      <div class="registration-date">02 — 06 NOVEMBER 2026 · BENGALURU</div>
+      <a class="registration-back" href="index.html">← BACK TO AIDW 2026</a>
+    </section>
+  </main>
+  <script>
+    const toggle=document.getElementById('mobile-menu-toggle'), nav=document.getElementById('mobile-nav'), menu=document.getElementById('menu-icon'), close=document.getElementById('close-icon');
+    if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('show');if(menu)menu.style.display=open?'none':'block';if(close)close.style.display=open?'block':'none';});}
+  </script>
+</body>
+</html>
