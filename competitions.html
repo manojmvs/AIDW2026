@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIDW 2026 — Competitions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="workshop.css"><link rel="stylesheet" href="event-pages.css">
+<style>
+.event-card-top{display:flex;align-items:stretch;justify-content:space-between;height:82px;background:#171b1d;border-bottom:1px solid rgba(247,245,239,.1)}
+.event-card-number{padding:11px 12px;color:#101315;background:var(--event-card-color);font:700 9px 'JetBrains Mono',monospace}
+.event-card-date{min-width:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:1px solid rgba(247,245,239,.1);color:var(--event-card-color);font-family:'JetBrains Mono',monospace}
+.event-card-date b{font:800 27px 'Outfit',sans-serif;line-height:.85} .event-card-date small{font-size:8px;letter-spacing:.12em;margin-top:5px}
+.event-card-venue{margin-top:-8px;color:#777;font:8px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+.event-card{border-top:3px solid var(--event-card-color)}
+.event-card:hover{border-color:var(--event-card-color)}
+.event-card .workshop-club{color:var(--event-card-color)}
+.event-card .workshop-card-date{color:#777}
+@media(max-width:600px){.event-card-top{height:70px}.event-card-date{min-width:68px}.event-card-date b{font-size:23px}}
+</style>
+</head>
+<body class="registration-page workshop-registration-page event-listing-page">
+<header id="site-nav" class="site-nav">
+    
+    <!-- LOGOS -->
+    <div class="nav-brand-cluster">
+        <!-- Acharya Logo -->
+      <a href="https://www.acharya.ac.in/" class="nav-logo-link" aria-label="Acharya Home">
+        <img src="assests/Acharya.webp" alt="Acharya" />
+      </a>
+      <!-- Line partion -->
+        <span class="nav-logo-divider" aria-hidden="true"></span>
+            <!-- ASD Logo -->
+      <span class="nav-companion-logo nav-asd-logo">
+        <a href="https://asd.ac.in/">
+         <img src="assests/ASD.webp" alt="Acharya School of Design" />
+        </a>
+      </span>
+        <!-- Line Partion -->
+      <span class="nav-logo-divider" aria-hidden="true"></span>
+      <!-- AIDW Logo -->
+      <span class="nav-companion-logo nav-aidw-logo">
+        <a href="index.html">
+        <img src="assests/AIDW.png" alt="AIDW Tangram" />
+        </a>
+      </span>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#events">EVENTS</a>
+      <!-- <a href="#speakers">SPEAKERS</a> -->
+      <!-- <a href="#schedule">SCHEDULE</a> -->
+      <a href="index.html#sponsors">SPONSORS</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+
+    <button id="open-register-nav-btn" class="nav-register" data-cursor-label="ENTER →">
+      <a href="registration.html">
+      <span>REGISTER NOW</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+      </a>
+    </button>
+
+    <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Toggle navigation">
+      <svg id="menu-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      <svg id="close-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#events">EVENTS</a>
+      <!-- <a href="#speakers">SPEAKERS</a> -->
+      <!-- <a href="#schedule">SCHEDULE</a> -->
+      <a href="index.html#sponsors">SPONSORS</a>
+      <a href="index.html#contact">CONTACT</a>
+      <button id="mobile-register-btn">
+        <a href="registration.html">Register Now ↗ </a></button>
+    </div>
+  </header>
+<main class="registration-main workshop-registration-main">
+<section class="registration-content workshop-registration-content">
+<div class="registration-marker"><i></i><span>AIDW 2026 · COMPETITIONS</span><i></i></div>
+<h1 id="page-title">COMPETITIONS <span>2026.</span></h1>
+<p class="registration-sub">Explore the AIDW 2026 competitions programme, dates and venues.</p>
+<div class="registration-date">02 — 06 NOVEMBER 2026 · BENGALURU</div>
+<div class="club-filter-wrap day-filter-wrap"><div class="club-filter-label">FILTER BY DAY</div><div class="club-filters">
+<button class="club-filter active" data-filter="all">ALL <span>08</span></button>
+<button class="club-filter" data-filter="day01">DAY 01 <span>02 NOV</span></button>
+<button class="club-filter" data-filter="day02">DAY 02 <span>03 NOV</span></button>
+<button class="club-filter" data-filter="day03">DAY 03 <span>04 NOV</span></button>
+<button class="club-filter" data-filter="day04">DAY 04 <span>05 NOV</span></button>
+<button class="club-filter" data-filter="day05">DAY 05 <span>06 NOV</span></button>
+</div></div>
+<div class="workshop-results-head"><span id="event-count">08 COMPETITIONS</span><a href="index.html">← BACK TO AIDW 2026</a></div>
+<section id="event-grid" class="workshop-grid" aria-label="AIDW 2026 Competitions">
+<article class="workshop-card event-card" data-day="day02">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">01</div>
+    <div class="event-card-date"><b>03</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">03 NOV 2026</div>
+    <div class="workshop-club">LIVE SKETCHING COMPETITION</div>
+    <h2>Live Sketching Competition</h2>
+    <div class="event-card-venue">Live Sketching Competition</div>
+  </div>
+</article><article class="workshop-card event-card" data-day="day04">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">02</div>
+    <div class="event-card-date"><b>05</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">05 NOV 2026</div>
+    <div class="workshop-club">CINEMATIC POSTER COMPETITION</div>
+    <h2>Cinematic Poster Competition</h2>
+    <div class="event-card-venue">Cinematic Poster Competition</div>
+  </div>
+</article><article class="workshop-card event-card" data-day="day04">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">03</div>
+    <div class="event-card-date"><b>05</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">05 NOV 2026</div>
+    <div class="workshop-club">PHOTOGRAPHY COMPETITION</div>
+    <h2>Photography Competition</h2>
+    <div class="event-card-venue">Photography Competition</div>
+  </div>
+</article><article class="workshop-card event-card" data-day="day04">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">04</div>
+    <div class="event-card-date"><b>05</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">05 NOV 2026</div>
+    <div class="workshop-club">REEL MAKING COMPETITION</div>
+    <h2>Reel Making Competition</h2>
+    <div class="event-card-venue">Reel Making Competition</div>
+  </div>
+</article><article class="workshop-card event-card" data-day="day04">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">05</div>
+    <div class="event-card-date"><b>05</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">05 NOV 2026</div>
+    <div class="workshop-club">MOBILE GAMING FINALS</div>
+    <h2>Mobile Gaming Finals</h2>
+    <div class="event-card-venue">Mobile Gaming Finals</div>
+  </div>
+</article><article class="workshop-card event-card" data-day="day04">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">06</div>
+    <div class="event-card-date"><b>05</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">05 NOV 2026</div>
+    <div class="workshop-club">PC GAMING FINALS</div>
+    <h2>PC Gaming Finals</h2>
+    <div class="event-card-venue">PC Gaming Finals</div>
+  </div>
+</article><article class="workshop-card event-card" data-day="day04">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">07</div>
+    <div class="event-card-date"><b>05</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">05 NOV 2026</div>
+    <div class="workshop-club">THEMATIC FASHION ILLUSTRATION</div>
+    <h2>Thematic Fashion Illustration</h2>
+    <div class="event-card-venue">Thematic Fashion Illustration</div>
+  </div>
+</article><article class="workshop-card event-card" data-day="day04">
+  <div class="event-card-top" style="--event-card-color:#ff6b35">
+    <div class="event-card-number">08</div>
+    <div class="event-card-date"><b>05</b><small>NOV</small></div>
+  </div>
+  <div class="workshop-card-footer">
+    <div class="workshop-card-date">05 NOV 2026</div>
+    <div class="workshop-club">RECYCLING PRODUCT DEVELOPMENT</div>
+    <h2>Recycling Product Development</h2>
+    <div class="event-card-venue">Recycling Product Development</div>
+  </div>
+</article>
+</section>
+</section>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div>
+          <strong>AIDW <em>2026</em></strong>
+          <small>ACHARYA INTERNATIONAL DESIGN WEEK</small>
+        </div>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/acharya.design.week?stkn=bnZiYjYwaWxoZWVv" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; ACHARYA SCHOOL OF DESIGN <b></b> BENGALURU, INDIA</span>
+    </div>
+  </footer>
+
+<script>
+const buttons=[...document.querySelectorAll('.club-filter')];const cards=[...document.querySelectorAll('.event-card')];const count=document.getElementById('event-count');
+buttons.forEach(btn=>btn.addEventListener('click',()=>{const f=btn.dataset.filter;let n=0;buttons.forEach(b=>b.classList.toggle('active',b===btn));cards.forEach(c=>{const show=f==='all'||c.dataset.day===f;c.hidden=!show;if(show)n++});count.textContent=String(n).padStart(2,'0')+' COMPETITIONS';}));
+</script>
+<script src="script.js"></script>
+</body></html>
