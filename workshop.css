@@ -541,9 +541,81 @@
 }
 
 /* Shared event-date treatment for workshop + event listing cards */
-.workshop-card-date{font:700 8px 'JetBrains Mono',monospace;letter-spacing:.1em;margin-bottom:7px;color:#777}
+/* Workshop date — always visible on every workshop card */
+.workshop-card-date {
+  display: block !important;
+  width: 100%;
+  margin: 0 0 8px !important;
+  padding: 0 0 7px;
+  border-bottom: 1px solid rgba(17,21,22,.12);
+  color: #111516 !important;
+  font: 800 9px/1.2 'JetBrains Mono', monospace !important;
+  letter-spacing: .11em !important;
+  text-transform: uppercase;
+  opacity: 1 !important;
+}
+
+.workshop-card-date::before {
+  content: "DATE  ";
+  opacity: .48;
+  font-weight: 600;
+}
+
+.workshop-card[data-club="c"] .workshop-card-date { color: #159bd6 !important; }
+.workshop-card[data-club="m"] .workshop-card-date { color: #c58d00 !important; }
+.workshop-card[data-club="ay"] .workshop-card-date { color: #9654bb !important; }
+.workshop-card[data-club="am"] .workshop-card-date { color: #ef6c32 !important; }
+.workshop-card[data-club="em"] .workshop-card-date { color: #239b60 !important; }
+.workshop-card[data-club="r"] .workshop-card-date { color: #e23b43 !important; }
+
+@media (max-width: 600px) {
+  .workshop-card-date {
+    font-size: 8px !important;
+    letter-spacing: .09em !important;
+    margin-bottom: 7px !important;
+  }
+}
 .event-listing-page .workshop-registration-content h1 span{color:var(--registration-yellow);font-weight:300}
 .event-listing-page .club-filter[data-filter="all"]{--club-color:var(--registration-yellow)}
 .event-listing-page .site-footer,.workshop-registration-page .site-footer{position:relative;z-index:3;margin-top:20px}
 .event-listing-page .registration-main{padding-bottom:55px}
 @media(max-width:600px){.event-listing-page .workshop-card-date{font-size:7.5px}.event-listing-page .site-footer,.workshop-registration-page .site-footer{margin-top:10px}}
+
+/* =========================================================
+   MOBILE TWO-COLUMN EVENT GRID
+   Workshop page: 2 cards per row on mobile
+   ========================================================= */
+@media (max-width: 600px) {
+  .workshop-registration-page .workshop-grid,
+  .event-listing-page .workshop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .workshop-registration-page .workshop-card,
+  .event-listing-page .workshop-card {
+    min-width: 0;
+  }
+
+  .workshop-registration-page .workshop-card h2,
+  .event-listing-page .workshop-card h2 {
+    font-size: 14px !important;
+    line-height: .98 !important;
+  }
+
+  .workshop-registration-page .workshop-card-body,
+  .event-listing-page .workshop-card-body {
+    padding: 11px !important;
+  }
+
+  .workshop-registration-page .workshop-card-date,
+  .event-listing-page .workshop-card-date {
+    font-size: 7px !important;
+  }
+
+  .workshop-registration-page .workshop-register,
+  .event-listing-page .workshop-register {
+    padding: 9px 10px !important;
+    font-size: 7px !important;
+  }
+}
