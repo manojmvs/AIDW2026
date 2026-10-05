@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIDW 2026 — Workshop Registration</title>
+  <meta name="description" content="Register for AIDW 2026 workshops." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="workshop.css" />
+  <link rel="stylesheet" href="event-pages.css" />
+</head>
+<body class="registration-page workshop-registration-page">
+
+<header id="site-nav" class="site-nav">
+    
+    <!-- LOGOS -->
+    <div class="nav-brand-cluster">
+        <!-- Acharya Logo -->
+      <a href="https://www.acharya.ac.in/" class="nav-logo-link" aria-label="Acharya Home">
+        <img src="assests/Acharya.webp" alt="Acharya" />
+      </a>
+      <!-- Line partion -->
+        <span class="nav-logo-divider" aria-hidden="true"></span>
+            <!-- ASD Logo -->
+      <span class="nav-companion-logo nav-asd-logo">
+        <a href="https://asd.ac.in/">
+         <img src="assests/ASD.webp" alt="Acharya School of Design" />
+        </a>
+      </span>
+        <!-- Line Partion -->
+      <span class="nav-logo-divider" aria-hidden="true"></span>
+      <!-- AIDW Logo -->
+      <span class="nav-companion-logo nav-aidw-logo">
+        <a href="index.html">
+        <img src="assests/AIDW.png" alt="AIDW Tangram" />
+        </a>
+      </span>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#events">EVENTS</a>
+      <!-- <a href="#speakers">SPEAKERS</a> -->
+      <!-- <a href="#schedule">SCHEDULE</a> -->
+      <a href="index.html#sponsors">SPONSORS</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+
+    <button id="open-register-nav-btn" class="nav-register" data-cursor-label="ENTER →">
+      <a href="registration.html">
+      <span>REGISTER NOW</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+      </a>
+    </button>
+
+    <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Toggle navigation">
+      <svg id="menu-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      <svg id="close-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#events">EVENTS</a>
+      <!-- <a href="#speakers">SPEAKERS</a> -->
+      <!-- <a href="#schedule">SCHEDULE</a> -->
+      <a href="index.html#sponsors">SPONSORS</a>
+      <a href="index.html#contact">CONTACT</a>
+      <button id="mobile-register-btn">
+        <a href="registration.html">Register Now ↗ </a></button>
+    </div>
+  </header>
+
+<main class="registration-main workshop-registration-main">
+  <div class="registration-shape" aria-hidden="true"></div>
+
+  <section class="registration-content workshop-registration-content" aria-labelledby="registration-title">
+    <div class="registration-marker">
+      <i></i><span>AIDW 2026 · WORKSHOP REGISTRATION</span><i></i>
+    </div>
+
+    <h1 id="registration-title">WORKSHOP <span>REGISTRATION.</span></h1>
+
+    <p class="registration-sub">
+      Choose your workshop, explore the clubs and register directly through the official registration form.
+    </p>
+
+    <div class="registration-date">02 — 06 NOVEMBER 2026 · BENGALURU</div>
+
+    <div class="club-filter-wrap">
+      <div class="club-filter-label">FILTER BY CLUB</div>
+      <div class="club-filters" role="group" aria-label="Filter workshops by club">
+        <button class="club-filter active" data-filter="all">ALL <span>18</span></button>
+        <button class="club-filter" data-filter="c">C · COBALT <span>03</span></button>
+        <button class="club-filter" data-filter="m">M · MARTIAN <span>02</span></button>
+        <button class="club-filter" data-filter="ay">AY · AMETHYST <span>03</span></button>
+        <button class="club-filter" data-filter="am">AM · AMBER <span>02</span></button>
+        <button class="club-filter" data-filter="em">EM · EMERALD <span>04</span></button>
+        <button class="club-filter" data-filter="r">R · RUBY <span>04</span></button>
+      </div>
+    </div>
+
+    <div class="workshop-results-head">
+      <span id="workshop-count">18 WORKSHOPS</span>
+      <a href="index.html">← BACK TO AIDW 2026</a>
+    </div>
+
+    <section id="workshop-grid" class="workshop-grid" aria-label="AIDW 2026 workshops">
+
+      <article class="workshop-card" data-club="am">
+        <div class="workshop-card-image"><img src="assests/workshop/am1.jpg" alt="Upcycling Denim Accessories — Amber Club" loading="lazy"><span>01</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">AM · AMBER CLUB</div><h2>Upcycling Denim Accessories</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="am">
+        <div class="workshop-card-image"><img src="assests/workshop/am2.jpg" alt="T-Shirt Printing — Amber Club" loading="lazy"><span>02</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">AM · AMBER CLUB</div><h2>T-Shirt Printing</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="ay">
+        <div class="workshop-card-image"><img src="assests/workshop/ay1.jpg" alt="Toon Craft — Amethyst Club" loading="lazy"><span>03</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">AY · AMETHYST CLUB</div><h2>Toon Craft</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="ay">
+        <div class="workshop-card-image"><img src="assests/workshop/ay2.jpg" alt="Idea Lab — Amethyst Club" loading="lazy"><span>04</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">AY · AMETHYST CLUB</div><h2>Idea Lab</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="ay">
+        <div class="workshop-card-image"><img src="assests/workshop/ay3.jpg" alt="Shape Shift — Amethyst Club" loading="lazy"><span>05</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">AY · AMETHYST CLUB</div><h2>Shape Shift</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="c">
+        <div class="workshop-card-image"><img src="assests/workshop/c1.jpg" alt="Coconut Shell Jewellery — Cobalt Club" loading="lazy"><span>06</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">C · COBALT CLUB</div><h2>Coconut Shell Jewellery</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="c">
+        <div class="workshop-card-image"><img src="assests/workshop/c2.jpg" alt="Hand Slingbag Fashion Accessories — Cobalt Club" loading="lazy"><span>07</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">C · COBALT CLUB</div><h2>Hand Slingbag Fashion Accessories</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="c">
+        <div class="workshop-card-image"><img src="assests/workshop/c3.jpg" alt="Fashion Accessories — Cobalt Club" loading="lazy"><span>08</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">C · COBALT CLUB</div><h2>Fashion Accessories</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="em">
+        <div class="workshop-card-image"><img src="assests/workshop/em1.jpg" alt="Impasto Painting — Emerald Club" loading="lazy"><span>09</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">EM · EMERALD CLUB</div><h2>Impasto Painting</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="em">
+        <div class="workshop-card-image"><img src="assests/workshop/em2.jpg" alt="Fashion Styling — Emerald Club" loading="lazy"><span>10</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">EM · EMERALD CLUB</div><h2>Fashion Styling</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="em">
+        <div class="workshop-card-image"><img src="assests/workshop/em3.jpg" alt="Little Clay Stories — Emerald Club" loading="lazy"><span>11</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">EM · EMERALD CLUB</div><h2>Little Clay Stories</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="em">
+        <div class="workshop-card-image"><img src="assests/workshop/em4.jpg" alt="The Art of Gilding — Emerald Club" loading="lazy"><span>12</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">EM · EMERALD CLUB</div><h2>The Art of Gilding</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="m">
+        <div class="workshop-card-image"><img src="assests/workshop/m1.jpg" alt="Art Embroidered — Martian Club" loading="lazy"><span>13</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">M · MARTIAN CLUB</div><h2>Art Embroidered</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="m">
+        <div class="workshop-card-image"><img src="assests/workshop/m2.jpg" alt="Traditional Sculpting — Martian Club" loading="lazy"><span>14</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">M · MARTIAN CLUB</div><h2>Traditional Sculpting</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="r">
+        <div class="workshop-card-image"><img src="assests/workshop/r1.jpg" alt="Innovative Packaging — Ruby Club" loading="lazy"><span>15</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">R · RUBY CLUB</div><h2>Innovative Packaging</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="r">
+        <div class="workshop-card-image"><img src="assests/workshop/r2.jpg" alt="Types and Image — Ruby Club" loading="lazy"><span>16</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">R · RUBY CLUB</div><h2>Types and Image</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="r">
+        <div class="workshop-card-image"><img src="assests/workshop/r3.jpg" alt="Smocking — Ruby Club" loading="lazy"><span>17</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">R · RUBY CLUB</div><h2>Smocking</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+      <article class="workshop-card" data-club="r">
+        <div class="workshop-card-image"><img src="assests/workshop/r4.jpg" alt="Maximalism — Ruby Club" loading="lazy"><span>18</span></div>
+        <div class="workshop-card-footer"><div class="workshop-card-date">02 — 06 NOV 2026</div><div class="workshop-club">R · RUBY CLUB</div><h2>Maximalism</h2><a href="https://forms.gle/g9VVdcmB2rZVMCCD9" target="_blank" rel="noopener noreferrer" class="workshop-register">REGISTER <b>↗</b></a></div>
+      </article>
+
+    </section>
+  </section>
+</main>
+<footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div>
+          <strong>AIDW <em>2026</em></strong>
+          <small>ACHARYA INTERNATIONAL DESIGN WEEK</small>
+        </div>
+      </div>
+       <div class="footer-socials">
+        <a href="https://www.instagram.com/acharya.design.week?stkn=bnZiYjYwaWxoZWVv" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <!-- <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a> -->
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; ACHARYA SCHOOL OF DESIGN <b></b> BENGALURU, INDIA</span>
+      
+        </div>
+  </footer>
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const nav = document.getElementById('mobile-nav');
+  const menu = document.getElementById('menu-icon');
+  const close = document.getElementById('close-icon');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('show');
+      if (menu) menu.style.display = open ? 'none' : 'block';
+      if (close) close.style.display = open ? 'block' : 'none';
+    });
+  }
+
+  const filterButtons = [...document.querySelectorAll('.club-filter')];
+  const workshopCards = [...document.querySelectorAll('.workshop-card')];
+  const workshopCount = document.getElementById('workshop-count');
+
+  function filterWorkshops(filter) {
+    let visible = 0;
+
+    workshopCards.forEach(card => {
+      const show = filter === 'all' || card.dataset.club === filter;
+      card.hidden = !show;
+      if (show) visible++;
+    });
+
+    filterButtons.forEach(button => {
+      button.classList.toggle('active', button.dataset.filter === filter);
+    });
+
+    workshopCount.textContent = `${String(visible).padStart(2, '0')} WORKSHOPS`;
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => filterWorkshops(button.dataset.filter));
+  });
+</script>
+</body>
+</html>
