@@ -1,0 +1,76 @@
+
+/* AIDW 2026 — Event detail pages */
+.event-page{background:#101315;color:#f7f5ef;min-height:100svh;overflow-x:hidden}
+.event-page main{position:relative;z-index:1;padding:132px 42px 0;max-width:1440px;margin:0 auto}
+.event-page .event-hero{position:relative;max-width:1050px;margin:0 auto 62px;text-align:center;padding:42px 0 0}
+.event-page .event-hero::before{content:"";position:absolute;inset:-60px -20vw auto;height:440px;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(247,245,239,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(247,245,239,.035) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 90%)}
+.event-page .eyebrow{display:flex;justify-content:center;align-items:center;gap:12px;color:rgba(247,245,239,.55);font:9px 'JetBrains Mono',monospace;letter-spacing:.16em}
+.event-page .eyebrow i{display:block;width:38px;height:1px;background:var(--event-accent,#ffd100)}
+.event-page h1{margin:24px 0 0;font:800 clamp(58px,9vw,132px)/.78 'Outfit',sans-serif;letter-spacing:-.07em;text-transform:uppercase}
+.event-page h1 em{font-style:normal;color:var(--event-accent,#ffd100);font-weight:300}
+.event-page .hero-copy{max-width:650px;margin:30px auto 0;color:rgba(247,245,239,.68);font:13px/1.75 'Plus Jakarta Sans',sans-serif}
+.event-page .hero-date{margin-top:24px;font:600 10px 'JetBrains Mono',monospace;letter-spacing:.14em;color:rgba(247,245,239,.75)}
+.event-page .day-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin:0 auto 34px;padding:18px 0;border-top:1px solid rgba(247,245,239,.13);border-bottom:1px solid rgba(247,245,239,.13)}
+.event-page .day-filter{appearance:none;border:1px solid rgba(247,245,239,.18);background:transparent;color:rgba(247,245,239,.62);padding:11px 15px;cursor:pointer;font:600 9px 'JetBrains Mono',monospace;letter-spacing:.1em;transition:.25s ease}
+.event-page .day-filter:hover,.event-page .day-filter.active{background:var(--event-accent,#ffd100);border-color:var(--event-accent,#ffd100);color:#101315}
+.event-page .event-results-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 15px;padding:0 0 13px;border-bottom:1px solid rgba(247,245,239,.08)}
+.event-page .event-results-head span{font:600 10px 'JetBrains Mono',monospace;letter-spacing:.13em}
+.event-page .event-results-head a{color:rgba(247,245,239,.55);text-decoration:none;font:9px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.event-page .event-results-head a:hover{color:var(--event-accent,#ffd100)}
+.event-page .event-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-bottom:80px}
+.event-page .event-item{display:grid;grid-template-columns:105px 1fr;gap:20px;align-items:stretch;background:#171b1d;border:1px solid rgba(247,245,239,.11);min-height:150px;overflow:hidden;transition:.28s ease}
+.event-page .event-item:hover{transform:translateY(-3px);border-color:var(--event-accent,#ffd100);box-shadow:0 18px 35px rgba(0,0,0,.24)}
+.event-page .event-day{display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(247,245,239,.035);border-right:1px solid rgba(247,245,239,.09);padding:15px;color:var(--event-accent,#ffd100);font:700 10px 'JetBrains Mono',monospace;letter-spacing:.08em;text-align:center}
+.event-page .event-day strong{font:800 27px 'Outfit',sans-serif;letter-spacing:-.04em}
+.event-page .event-body{padding:20px 20px 20px 0;align-self:center}
+.event-page .event-type{font:8px 'JetBrains Mono',monospace;letter-spacing:.13em;color:var(--event-accent,#ffd100)}
+.event-page .event-body h2{margin:8px 0 8px;font:800 25px/.95 'Outfit',sans-serif;letter-spacing:-.035em;text-transform:uppercase}
+.event-page .event-body p{margin:0;color:rgba(247,245,239,.55);font:11px/1.6 'Plus Jakarta Sans',sans-serif}
+.event-page .event-note{grid-column:1/-1;border:1px dashed rgba(247,245,239,.15);padding:26px;text-align:center;color:rgba(247,245,239,.45);font:10px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.event-page .event-page-footer-spacer{height:0}
+.event-page .site-footer{position:relative;z-index:2}
+
+/* Fashion show */
+.fashion-page .fashion-feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:18px;padding-bottom:80px}
+.fashion-page .fashion-visual{min-height:540px;background:linear-gradient(135deg,rgba(255,107,0,.14),rgba(255,209,0,.03)),url('assests/fashion.jpeg') center/cover no-repeat;border:1px solid rgba(247,245,239,.13);position:relative;overflow:hidden}
+.fashion-page .fashion-visual::after{content:"DAY 05";position:absolute;right:18px;top:18px;color:#101315;background:#ff6b00;padding:8px 10px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.fashion-page .fashion-panel{display:flex;flex-direction:column;justify-content:center;padding:40px;border:1px solid rgba(247,245,239,.13);background:#171b1d}
+.fashion-page .fashion-panel .label{color:#ff6b00;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.15em}
+.fashion-page .fashion-panel h2{margin:15px 0;font:800 clamp(38px,5vw,70px)/.84 'Outfit',sans-serif;letter-spacing:-.06em;text-transform:uppercase}
+.fashion-page .fashion-panel h2 em{font-style:normal;color:#ff6b00;font-weight:300}
+.fashion-page .fashion-panel p{color:rgba(247,245,239,.62);font:13px/1.75 'Plus Jakarta Sans',sans-serif;margin:0}
+.fashion-page .fashion-day{margin-top:28px;padding-top:18px;border-top:1px solid rgba(247,245,239,.12);font:600 10px 'JetBrains Mono',monospace;letter-spacing:.13em}
+
+@media(max-width:900px){
+ .event-page main{padding-left:24px;padding-right:24px}
+ .event-page .event-list{grid-template-columns:1fr}
+ .fashion-page .fashion-feature{grid-template-columns:1fr}
+ .fashion-page .fashion-visual{min-height:440px}
+}
+@media(max-width:600px){
+ .event-page main{padding:108px 14px 0}
+ .event-page .event-hero{padding-top:25px;margin-bottom:42px}
+ .event-page .event-hero::before{height:360px;background-size:55px 55px}
+ .event-page .eyebrow{font-size:7px;gap:7px;white-space:nowrap}
+ .event-page .eyebrow i{width:22px}
+ .event-page h1{font-size:clamp(46px,14vw,78px);line-height:.83}
+ .event-page .hero-copy{font-size:11px;line-height:1.65;margin-top:24px}
+ .event-page .hero-date{font-size:8px;line-height:1.5}
+ .event-page .day-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .event-page .day-filter{width:100%;padding:11px 6px}
+ .event-page .day-filter:first-child{grid-column:1/-1}
+ .event-page .event-results-head{align-items:flex-start;gap:10px;flex-direction:column}
+ .event-page .event-list{gap:12px;padding-bottom:55px}
+ .event-page .event-item{grid-template-columns:72px 1fr;gap:14px;min-height:135px}
+ .event-page .event-day strong{font-size:22px}
+ .event-page .event-body{padding:17px 13px 17px 0}
+ .event-page .event-body h2{font-size:21px}
+ .event-page .event-body p{font-size:10px}
+ .fashion-page .fashion-visual{min-height:340px}
+ .fashion-page .fashion-panel{padding:25px}
+}
+@media(max-width:360px){
+ .event-page main{padding-left:11px;padding-right:11px}
+ .event-page .event-item{grid-template-columns:62px 1fr}
+ .event-page .event-body h2{font-size:18px}
+}

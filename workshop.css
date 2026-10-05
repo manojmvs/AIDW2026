@@ -1,0 +1,549 @@
+/* =========================================================
+   AIDW 2026 — WORKSHOP REGISTRATION
+   Uses the existing site-wide style.css for navigation.
+   ========================================================= */
+
+.workshop-registration-page {
+  --registration-bg: #111516;
+  --registration-ivory: #f7f5ef;
+  --registration-muted: rgba(247,245,239,.58);
+  --registration-line: rgba(247,245,239,.14);
+  --registration-yellow: #ffd100;
+  min-height: 100svh;
+  background: var(--registration-bg);
+  color: var(--registration-ivory);
+  overflow-x: hidden;
+}
+
+.workshop-registration-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(247,245,239,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,245,239,.035) 1px, transparent 1px);
+  background-size: 100px 100px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 92%);
+}
+
+.workshop-registration-main {
+  min-height: 100svh;
+  display: block;
+  padding: 132px 30px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.workshop-registration-content {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.workshop-registration-content .registration-marker {
+  position: relative;
+  z-index: 2;
+}
+
+.workshop-registration-content h1 {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(52px, 8vw, 112px);
+  line-height: .84;
+}
+
+.workshop-registration-content .registration-sub {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin-top: 28px;
+}
+
+.workshop-registration-content .registration-date {
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+}
+
+.registration-shape {
+  z-index: 0;
+  opacity: .75;
+}
+
+/* Club filter */
+.club-filter-wrap {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 48px auto 0;
+  padding: 18px 0 20px;
+  border-top: 1px solid var(--registration-line);
+  border-bottom: 1px solid var(--registration-line);
+}
+
+.club-filter-label {
+  margin-bottom: 12px;
+  color: var(--registration-muted);
+  font: 9px 'JetBrains Mono', monospace;
+  letter-spacing: .16em;
+}
+
+.club-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.club-filter {
+  appearance: none;
+  border: 1px solid var(--registration-line);
+  background: transparent;
+  color: rgba(247,245,239,.65);
+  padding: 11px 14px;
+  cursor: pointer;
+  font: 600 9px 'JetBrains Mono', monospace;
+  letter-spacing: .09em;
+  transition: .25s ease;
+}
+
+.club-filter span {
+  margin-left: 4px;
+  opacity: .5;
+}
+
+.club-filter:hover,
+.club-filter.active {
+  color: #111516;
+  background: var(--registration-yellow);
+  border-color: var(--registration-yellow);
+}
+
+.club-filter.active span {
+  opacity: .75;
+}
+
+/* Result line */
+.workshop-results-head {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 17px 0 15px;
+}
+
+.workshop-results-head span {
+  color: var(--registration-ivory);
+  font: 600 10px 'JetBrains Mono', monospace;
+  letter-spacing: .13em;
+}
+
+.workshop-results-head a {
+  color: var(--registration-muted);
+  text-decoration: none;
+  font: 9px 'JetBrains Mono', monospace;
+  letter-spacing: .1em;
+  transition: .25s ease;
+}
+
+.workshop-results-head a:hover {
+  color: var(--registration-yellow);
+}
+
+/* Workshop cards */
+.workshop-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+
+.workshop-card {
+  min-width: 0;
+  background: var(--registration-ivory);
+  color: #111516;
+  overflow: hidden;
+  border: 1px solid rgba(247,245,239,.12);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0,0,0,.3);
+}
+
+.workshop-card[hidden] {
+  display: none;
+}
+
+.workshop-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #fff;
+}
+
+.workshop-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+
+.workshop-card:hover .workshop-card-image img {
+  transform: scale(1.035);
+}
+
+.workshop-card-image span {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  padding: 5px 7px;
+  background: rgba(17,21,22,.88);
+  color: #fff;
+  font: 9px 'JetBrains Mono', monospace;
+}
+
+.workshop-card-footer {
+  padding: 14px 15px 15px;
+}
+
+.workshop-club {
+  color: #777;
+  font: 8px 'JetBrains Mono', monospace;
+  letter-spacing: .13em;
+}
+
+.workshop-card h2 {
+  min-height: 42px;
+  margin: 8px 0 14px;
+  font: 800 19px/.95 'Outfit', sans-serif;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+
+.workshop-register {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 12px;
+  background: #111516;
+  color: #fff;
+  text-decoration: none;
+  font: 600 9px 'JetBrains Mono', monospace;
+  letter-spacing: .12em;
+  transition: .25s ease;
+}
+
+.workshop-register b {
+  font-weight: 600;
+}
+
+.workshop-register:hover {
+  background: var(--registration-yellow);
+  color: #111516;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .workshop-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .workshop-registration-main {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 800px) {
+  .workshop-registration-main {
+    padding: 120px 18px 60px;
+  }
+
+  .workshop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .workshop-registration-content h1 {
+    font-size: clamp(48px, 12vw, 84px);
+  }
+
+  .workshop-card h2 {
+    font-size: 17px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .workshop-registration-main {
+    padding: 105px 14px 45px;
+  }
+
+  .workshop-registration-content .registration-marker {
+    gap: 7px;
+    font-size: 7px;
+    letter-spacing: .1em;
+    white-space: nowrap;
+  }
+
+  .workshop-registration-content .registration-marker i {
+    width: 22px;
+    flex: 0 0 22px;
+  }
+
+  .workshop-registration-content h1 {
+    font-size: clamp(40px, 12.5vw, 68px);
+  }
+
+  .workshop-registration-content .registration-sub {
+    margin-top: 23px;
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .workshop-registration-content .registration-date {
+    font-size: 8px;
+    letter-spacing: .1em;
+  }
+
+  .club-filter-wrap {
+    margin-top: 35px;
+  }
+
+  .club-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .club-filter {
+    width: 100%;
+    padding: 11px 5px;
+    font-size: 8px;
+  }
+
+  .club-filter:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .workshop-results-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .workshop-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .workshop-card-image {
+    aspect-ratio: 1 / .86;
+  }
+
+  .workshop-card-footer {
+    padding: 15px;
+  }
+
+  .workshop-card h2 {
+    min-height: auto;
+    font-size: 22px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .workshop-registration-main {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .club-filter {
+    font-size: 7.5px;
+  }
+}
+
+/* AIDW 2026 — CLUB COLOUR SYSTEM */
+/* Colour follows each card's data-club and each filter's data-filter. */
+.workshop-card[data-club="c"], .club-filter[data-filter="c"] { --club-color: #159bd6; --club-rgb: 21,155,214; }
+.workshop-card[data-club="m"], .club-filter[data-filter="m"] { --club-color: #e5a600; --club-rgb: 229,166,0; }
+.workshop-card[data-club="ay"], .club-filter[data-filter="ay"] { --club-color: #9654bb; --club-rgb: 150,84,187; }
+.workshop-card[data-club="am"], .club-filter[data-filter="am"] { --club-color: #ef6c32; --club-rgb: 239,108,50; }
+.workshop-card[data-club="em"], .club-filter[data-filter="em"] { --club-color: #239b60; --club-rgb: 35,155,96; }
+.workshop-card[data-club="r"], .club-filter[data-filter="r"] { --club-color: #e23b43; --club-rgb: 226,59,67; }
+.club-filter[data-filter="all"] { --club-color: var(--registration-yellow, #ffd100); }
+
+.club-filter { border-color: var(--club-color, var(--registration-line)); }
+.club-filter:not(.active) { color: var(--club-color, rgba(247,245,239,.65)); }
+.club-filter:hover, .club-filter.active {
+  border-color: var(--club-color, var(--registration-yellow, #ffd100));
+  background: var(--club-color, var(--registration-yellow, #ffd100));
+  color: #111516;
+}
+.workshop-card { border: 1px solid var(--club-color, rgba(247,245,239,.12)); border-top-width: 4px; }
+.workshop-card:hover { box-shadow: 0 18px 38px rgba(var(--club-rgb, 0,0,0), .25); }
+.workshop-card .workshop-club { color: var(--club-color, #777); font-weight: 700; }
+.workshop-card .workshop-card-image span { background: var(--club-color, #111516); color: #111516; font-weight: 700; }
+.workshop-card .workshop-register { border-left: 3px solid var(--club-color, #ffd100); }
+.workshop-card .workshop-register:hover,
+.workshop-card .workshop-register:focus-visible { background: var(--club-color, #ffd100); color: #111516; }
+
+
+/* =========================================================
+   HUD / CONTENT SEPARATION FIX
+   Keep workshop content visually BELOW the fixed AIDW HUD.
+   The original site HUD is transparent by default, which
+   allowed workshop cards to show through it while scrolling.
+   ========================================================= */
+
+.workshop-registration-page .site-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 74px !important;
+  z-index: 9999 !important;
+
+  background: rgba(16, 19, 21, 0.97) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
+
+  border-bottom: 1px solid rgba(247, 245, 239, 0.13) !important;
+}
+
+.workshop-registration-page .workshop-registration-main {
+  position: relative;
+  z-index: 1;
+  padding-top: 150px;
+}
+
+.workshop-registration-page .workshop-grid,
+.workshop-registration-page .workshop-card,
+.workshop-registration-page .workshop-card-image,
+.workshop-registration-page .workshop-card-footer,
+.workshop-registration-page .workshop-results-head,
+.workshop-registration-page .club-filter-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make sure card hover/transform never creates a stacking
+   layer above the HUD. */
+.workshop-registration-page .workshop-card {
+  isolation: isolate;
+}
+
+@media (max-width: 600px) {
+  .workshop-registration-page .site-nav {
+    height: 64px !important;
+  }
+
+  .workshop-registration-page .workshop-registration-main {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 425px) {
+  .workshop-registration-page .site-nav {
+    height: 60px !important;
+  }
+
+  .workshop-registration-page .workshop-registration-main {
+    padding-top: 112px;
+  }
+}
+
+
+/* =========================================================
+   INDEX-MATCHED WORKSHOP HERO
+   ========================================================= */
+
+/* Match the index hero treatment:
+   WORKSHOP = ivory
+   REGISTRATION = AIDW yellow accent */
+.workshop-registration-content h1 {
+  color: var(--registration-ivory);
+  text-align: center;
+  letter-spacing: -0.065em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.workshop-registration-content h1 span {
+  display: inline;
+  color: var(--registration-yellow);
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* Keep the supporting copy genuinely centered,
+   independent of inherited width or alignment rules. */
+.workshop-registration-content .registration-sub {
+  width: min(680px, 100%);
+  margin: 28px auto 0;
+  text-align: center;
+  color: rgba(247,245,239,.72);
+}
+
+/* Date follows the centered index-style hero rhythm. */
+.workshop-registration-content .registration-date {
+  width: 100%;
+  margin: 24px auto 0;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Index-style yellow marker around the eyebrow. */
+.workshop-registration-content .registration-marker {
+  justify-content: center;
+  text-align: center;
+}
+
+.workshop-registration-content .registration-marker i {
+  background: var(--registration-yellow);
+}
+
+/* Yellow accent for the active registration/filter system. */
+.workshop-registration-page .club-filter-label {
+  color: rgba(247,245,239,.55);
+}
+
+@media (max-width: 600px) {
+  .workshop-registration-content h1 {
+    text-align: center;
+  }
+
+  .workshop-registration-content .registration-sub {
+    width: min(100%, 430px);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .workshop-registration-content .registration-date {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Shared event-date treatment for workshop + event listing cards */
+.workshop-card-date{font:700 8px 'JetBrains Mono',monospace;letter-spacing:.1em;margin-bottom:7px;color:#777}
+.event-listing-page .workshop-registration-content h1 span{color:var(--registration-yellow);font-weight:300}
+.event-listing-page .club-filter[data-filter="all"]{--club-color:var(--registration-yellow)}
+.event-listing-page .site-footer,.workshop-registration-page .site-footer{position:relative;z-index:3;margin-top:20px}
+.event-listing-page .registration-main{padding-bottom:55px}
+@media(max-width:600px){.event-listing-page .workshop-card-date{font-size:7.5px}.event-listing-page .site-footer,.workshop-registration-page .site-footer{margin-top:10px}}
